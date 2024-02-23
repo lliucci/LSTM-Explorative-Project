@@ -1,0 +1,26 @@
+---
+title: "Week 12 Assignment"
+author: "Eliot Liucci"
+date: "`r Sys.Date()`"
+output: pdf_document
+bibliography: writingproject.bib
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Summary of Writing Project Presentation  
+
+Victoria's presentation was interesting to me because I have no experience with quantile regression. The presentation left me wondering about other applications of quantile regression and it can be used in situation where other regression techniques may fall short. Victoria did a really great job of describing every component in her presentation and describing the motivation for it. I feel as though motivation is a factor that is sometimes left out of presentations, so it was nice to see that.  
+
+# Writing Project Proposal  
+
+The focus of my writing project will be on applications of machine learning techniques for time series forecasting. As of now, I have not found a single technique to focus on, so I will likely cover several techniques and compare. Pablo Ruiz covered a short summary of several techniques in his article "ML Approached for Time Series", where he introduced techniques such as Symbol Regression, Extreme Learning Machines, and Convolutional Neural Networks [@ruiz2019machinelearning]. Akusok et al covers a deep dive into Extreme Learning Machines and how to properly utilize them [@akusok2015high]. Specific applications of Machine Learning for Time Series forecasting is covered in Lim et al, where the algorithms and model forms are described [@lim2021time]. Lim et al also covers different decoder architectures that can be used to account for temporal data. As my GRA is based on time series clustering, I will attempt to use time series data from 2000 to 2020 and attempt to forecast up to 2023 for cross validation. Observed data from 2020 to 2023 will allow for proper assessment of prediction ability of each method.
+
+I have not yet found an advisor or committee, but have reached out to Dominique Zosso and John Smith, whom I will meet with after break. Additional committee members include Katharine Banner (GRA PI), Samidha Shetty for input on methods for dealing with missingness, Mark Greenwood for his background with time series data, and Ian Laga for his experience with coding. In my meetings with potential advisors and co-chairs, I will prioritize discussing a timeline and expectations for a deliverable.  
+
+ 
+\newpage  
+
+# References  
