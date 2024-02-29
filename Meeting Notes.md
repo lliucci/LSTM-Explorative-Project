@@ -1,3 +1,28 @@
+# 2/29/2024  
+
+## Notes  
+- Reference specific examples in first couple of slides
+- Motivate ARIMA as historically common method for forecasting
+- New Outline
+  - Hook with time-series facts
+  - Reference specific instances of time-series data
+    - Yellowstone flood
+    - Gamestop stock
+  - RNNs and their use for time-series forcasting
+    - LSTM Networks
+  - Data Available, motivating question
+    - Missingness, how we dealt with it
+  - Results
+    - LSTM vs. ARIMA
+  - Pros and Cons
+  - Next Steps
+    - Compare to Holt-Winters and Exponential Smoothing
+- Kalman Filter for Interpolation
+- Poster
+  - Everything in presentation
+  - Assumptions made for each method
+  - Equations
+
 # 2/1/2024  
 
 ## Notes  
