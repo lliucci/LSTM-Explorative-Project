@@ -1,0 +1,39 @@
+\documentclass[12pt]{article}
+
+\usepackage{WPROJ} % Style file
+\usepackage{natbib} % For bibliography citations
+\usepackage[caption=false,subrefformat=parens,labelformat=parens]{subfig}
+
+\doublespacing
+\begin{document}
+% Coversheet
+\input{coversheet}
+
+\tableofcontents
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Body
+
+\section{Introduction}\label{sec:intro}
+\input{body/introduction}
+\subsection{This is a Subsection}
+\input{body/introsub} 
+%
+\section{Literature Review}\label{sec:background}
+\input{body/background}
+%
+\section{Methods}\label{sec:methods}
+\input{body/methods}
+%
+\section{Conclusion}\label{sec:conclusion}
+\input{body/conclusion}
+
+
+% References
+% natbib usage reference: http://merkel.texture.rocks/Latex/natbib.php
+\newpage
+\bibliographystyle{apalike}
+\bibliography{references}
+
+\end{document}}

@@ -12,6 +12,7 @@ import tensorflow as tf
 from keras.optimizers import Adam
 import time
 from sklearn import metrics
+from keras import regularizers
 
 
 # Confirming GPU is being used
@@ -26,7 +27,7 @@ print(device_lib.list_local_devices())
 os.getcwd()
 
 # Reading in data
-df = pd.read_csv("Data/Cleaned_Data.csv",index_col= "date", parse_dates = True)
+df = pd.read_csv("Data/Shark_Slough.csv",index_col= "date", parse_dates = True)
 
 # Selecting X.stn and Stage_cm
 TS = df.loc[:, ["X.stn","Stage_cm"]]
@@ -36,33 +37,28 @@ TS.head()
 P33 = TS[TS['X.stn'] == "P33"].loc[:,"Stage_cm"] # P33 has very low missingness, good for training rnn
 P33.head
 
+# Date filtering
 P33 = P33[P33.index >= "1995-01-01"]
 
+# Interpolation
 print(P33.isnull().sum()) # 402 missing values present
-
-#P33.plot(figsize=(12,6))
-
-P33 = P33.interpolate(method = "linear") # Linear interpolation for missing values
-
+P33_interp = P33.interpolate(method = "spline", order = 4) # Spline interpolation for missing values
 print(P33.isnull().sum()) # 0 missing values present
-
-#P33.plot(figsize=(12,6))
+#P33_interp.plot(figsize=(12,6), color = 'r')
+#P33.plot(figsize = (12,6), color = 'b')
 #plt.show()
 
 # Length of time series
 len(P33)
 
 # Splitting dataset for cross-validation
-
-train_size = int(len(P33) * 0.9) # Use 95% of data for training
-
-train = P33.iloc[0:train_size]
-test = P33.iloc[train_size:len(P33)] 
+train_size = int(len(P33) * 0.9) # Use 90% of data for training
+train = P33_interp.iloc[0:train_size]
+test = P33_interp.iloc[train_size:len(P33)] 
 
 # Reshaping data sets from Panda Series to 1D Array
 train = train.values.flatten()
 train = train.reshape(-1,1)
-
 test = test.values.flatten()
 test = test.reshape(-1,1)
 
@@ -72,55 +68,100 @@ stage_transformer = stage_transformer.fit(train)
 scaled_train = stage_transformer.transform(train)
 scaled_test = stage_transformer.transform(test)
 
-scaled_train[:10]
-scaled_test[:10]
-
 # Define inputs  
 n_input = 31
 n_features = 1
 generator = TimeseriesGenerator(scaled_train, scaled_train, 
                                 length = n_input,
-                                batch_size = 10000) # Update network after 3 months of information, speeds up training
-
-X,y = generator[0]
-
-X.flatten() # first n_input days of information for training
-y # n_input + 1 days value
+                                batch_size = 40000) # Update network after 3 months of information, speeds up training
 
 # Model Definition  
 model = Sequential() # layers are added sequentially
 model.add(LSTM(128, 
-               activation = 'tanh', 
-               input_shape = (n_input, n_features)))
-model.add(Dropout(rate = 0.3)) # 0.3
+                activation = 'tanh', 
+                input_shape = (n_input, n_features),
+                return_sequences=True,
+                kernel_regularizer=regularizers.L1(0.001),
+                activity_regularizer=regularizers.L2(0.001)))
+model.add(Dropout(0.3))
+model.add(LSTM(64, 
+                activation = 'tanh', 
+                input_shape = (n_input, n_features),
+                return_sequences=True,
+                kernel_regularizer=regularizers.L1(0.001),
+                activity_regularizer=regularizers.L2(0.001)))
+model.add(Dropout(0.3))
+model.add(LSTM(32, 
+                activation = 'tanh', 
+                input_shape = (n_input, n_features),
+                return_sequences=False,
+                kernel_regularizer=regularizers.L1(0.001),
+                activity_regularizer=regularizers.L2(0.001)))
+model.add(Dropout(0.3))
 model.add(Dense(20))
-model.add(Dense(1)) # final output layer
-model.compile(optimizer = Adam(learning_rate=0.001), loss = 'mse')
-
+model.add(Dropout(0.3))
+model.add(Dense(1))
+model.compile(optimizer = Adam(learning_rate=0.005), 
+              loss = 'mse')
 model.summary()
 
 # Fitting model  
 with tf.device('/device:GPU:0'): 
     model.fit(generator, epochs = 2000)
 
-# Check when loss levels out
-loss_per_epoch = model.history.history["loss"]
-plt.plot(range(len(loss_per_epoch)), loss_per_epoch)
+# Loop for training
+
+# for j in range(10):
+    
+    # # Fitting model  
+    # with tf.device('/device:GPU:0'): 
+    #     model.fit(generator, epochs = 2000)
+
+#     # Check when loss levels out
+#     # loss_per_epoch = model.history.history["loss"]
+#     # plt.plot(range(len(loss_per_epoch)), loss_per_epoch)
+#     # plt.show()
+
+#     # True Out of Sample Predictions
+#     duration = 31
+#     test_predictions = []
+#     test = P33_interp.iloc[train_size:train_size + duration] 
+#     test = test.values.flatten()
+#     test = test.reshape(-1,1)
+#     first_eval_batch = scaled_train[-n_input:]
+#     current_batch = first_eval_batch.reshape((1, n_input, n_features))
+#     for i in range(duration):
+#         current_pred = model.predict(current_batch)[0]
+#         test_predictions.append(current_pred) 
+#         current_batch = np.append(current_batch[:,1:,:],[[current_pred]],axis=1)
+#     true_predictions = stage_transformer.inverse_transform(test_predictions)
+#     plt.plot(test, color = 'b', label = True)
+#     plt.plot(true_predictions, color = 'r', label = True)
+#     plt.savefig(f"Model Diagnostics/model_{j}.png")
+#     plt.clf()
+        
+        
+# True Out of Sample Predictions
+duration = 31
+test_predictions = []
+test = P33_interp.iloc[train_size:train_size + duration] 
+test = test.values.flatten()
+test = test.reshape(-1,1)
+first_eval_batch = scaled_train[-n_input:]
+current_batch = first_eval_batch.reshape((1, n_input, n_features))
+for i in range(duration):
+   current_pred = model.predict(current_batch)[0]
+   test_predictions.append(current_pred) 
+   current_batch = np.append(current_batch[:,1:,:],[[current_pred]],axis=1)
+true_predictions = stage_transformer.inverse_transform(test_predictions)
+plt.plot(test, color = 'b', label = True)
+plt.plot(true_predictions, color = 'r', label = True)
 plt.show()
 
-# Predictions
-y_pred = model.predict(scaled_test)
-true_pred = stage_transformer.inverse_transform(y_pred)
-
-plt.plot(true_pred, label = "true", color = "r")
-plt.plot(test, label = "true")
-plt.show()
-
-metrics.mean_squared_error(test, true_pred)
-
-# Best: 0.681
+metrics.mean_squared_error(test, true_predictions)
+        # Best = 7.188 over 31 days
 
 # Saving/Loading Best Model
 
-#model.save("Best.keras")
-model = tf.keras.models.load_model('Best.keras')
+# model.save("Models/Best_3_Layer_LSTM.keras")
+# model = tf.keras.models.load_model('Models/Best_3_Layer_LSTM.keras')    

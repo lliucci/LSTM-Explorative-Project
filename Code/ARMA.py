@@ -7,7 +7,7 @@ from statsmodels.tsa.arima.model import ARIMA
 from pmdarima.arima import auto_arima
 
 # Reading in data
-df = pd.read_csv("Data/Cleaned_Data.csv",index_col= "date", parse_dates = True)
+df = pd.read_csv("Data/Shark_Slough.csv",index_col= "date", parse_dates = True)
 
 # Selecting X.stn and Stage_cm
 TS = df.loc[:, ["X.stn","Stage_cm"]]
@@ -36,7 +36,7 @@ len(P33)
 train_size = int(len(P33) * 0.9) # Use 95% of data for training
 
 train = P33.iloc[0:train_size]
-test = P33.iloc[train_size:len(P33)] 
+test = P33.iloc[train_size:train_size + 31] 
 
 
 f = pyplot.figure()
@@ -46,7 +46,16 @@ ax1.set_title("First Order Differencing")
 
 ax2 = f.add_subplot(122)
 ax2.set_title("ACF")
-plot_pacf(P33, lags = 200, ax = ax2)
+plot_pacf(P33, lags = 25, ax = ax2)
 pyplot.show()
 
+# Fit ARIMA
+
 model = auto_arima(train)
+model.fit(train)
+model.summary()
+arima_preds = model.predict(n_periods = 31)
+
+plt.plot(test, color = 'b', label = True)
+plt.plot(arima_preds, color = 'g', label = True)
+plt.show()

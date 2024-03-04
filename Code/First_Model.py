@@ -12,6 +12,7 @@ import tensorflow as tf
 from keras.optimizers import Adam
 import time
 from sklearn import metrics
+import random
 
 
 # Confirming GPU is being used
@@ -26,7 +27,7 @@ print(device_lib.list_local_devices())
 os.getcwd()
 
 # Reading in data
-df = pd.read_csv("Data/Cleaned_Data.csv",index_col= "date", parse_dates = True)
+df = pd.read_csv("Data/Shark_Slough.csv",index_col= "date", parse_dates = True)
 
 # Selecting X.stn and Depth
 TS = df.loc[:, ["X.stn","Depth"]]
@@ -57,7 +58,7 @@ len(P33)
 train_size = int(len(P33) * 0.9) # Use 95% of data for training
 
 train = P33.iloc[0:train_size]
-test = P33.iloc[train_size:len(P33)] 
+test = P33.iloc[train_size:] 
 
 # Reshaping data sets from Panda Series to 1D Array
 train = train.values.flatten()
@@ -121,13 +122,13 @@ metrics.mean_squared_error(test, true_pred)
 # Best: 0.0019
 
 # Prediction for Another Station
-Station = TS[TS['X.stn'] == "DO3"].loc[:,"Depth"] # P33 has very low missingness, good for training rnn
+Station = TS[TS['X.stn'] == "NP205"].loc[:,"Depth"] # P33 has very low missingness, good for training rnn
 Station = Station[Station.index >= "2020-01-01"]
 Station = Station.interpolate("linear")
 Station = Station.values.flatten()
 Station = Station.reshape(-1,1)
 
-test_DO2 = stage_transformer.transform(Station)
+test_Station = stage_transformer.transform(Station)
 y_pred = model.predict(test_DO2)
 true_pred = stage_transformer.inverse_transform(y_pred)
 
@@ -137,12 +138,19 @@ plt.show()
 
 metrics.mean_squared_error(Station, true_pred)
 
+# True Out of Sample Predictions
+duration = 62
+
 test_predictions = []
+
+test = P33.iloc[train_size:train_size + duration] 
+test = test.values.flatten()
+test = test.reshape(-1,1)
 
 first_eval_batch = scaled_train[-n_input:]
 current_batch = first_eval_batch.reshape((1, n_input, n_features))
 
-for i in range(len(test_DO2)):
+for i in range(duration):
     
     # get the prediction value for the first batch
     current_pred = model.predict(current_batch)[0]
@@ -153,13 +161,13 @@ for i in range(len(test_DO2)):
     # use the prediction to update the batch and remove the first value
     current_batch = np.append(current_batch[:,1:,:],[[current_pred]],axis=1)
     
-true_predictions = stage_transformer.transform(test_predictions)
+true_predictions = stage_transformer.inverse_transform(test_predictions)
 
-plt.plot(Station, color = 'b', label = True)
+plt.plot(test, color = 'b', label = True)
 plt.plot(true_predictions, color = 'r', label = True)
 plt.show()
 
 # Saving/Loading Best Model
 
-#model.save("Best.keras")
-model = tf.keras.models.load_model('Best.keras')
+# model.save("Best.keras")
+# model = tf.keras.models.load_model('Models/Best_3_Layer_LSTM.keras')
