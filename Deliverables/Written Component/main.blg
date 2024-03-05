@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2023)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+The style file: apalike.bst
+Database file #1: writingproject.bib
+Warning--empty journal in understandinglstm
+You've used 14 entries,
+            1935 wiz_defined-function locations,
+            558 strings with 5636 characters,
+and the built_in function-call counts, 4916 in all, are:
+= -- 469
+> -- 193
+< -- 11
++ -- 68
+- -- 62
+* -- 403
+:= -- 885
+add.period$ -- 40
+call.type$ -- 14
+change.case$ -- 96
+chr.to.int$ -- 14
+cite$ -- 15
+duplicate$ -- 189
+empty$ -- 346
+format.name$ -- 88
+if$ -- 941
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 17
+newline$ -- 71
+num.names$ -- 42
+pop$ -- 88
+preamble$ -- 1
+purify$ -- 100
+quote$ -- 0
+skip$ -- 148
+stack$ -- 0
+substring$ -- 312
+swap$ -- 13
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 76
+warning$ -- 1
+while$ -- 37
+width$ -- 0
+write$ -- 174
+(There was 1 warning)
