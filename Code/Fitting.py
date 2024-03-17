@@ -27,34 +27,16 @@ print(device_lib.list_local_devices())
 os.getcwd()
 
 # Reading in data
-df = pd.read_csv("Data/Shark_Slough.csv",index_col= "date", parse_dates = True)
-
-# Selecting X.stn and Stage_cm
-TS = df.loc[:, ["X.stn","Stage_cm"]]
-TS.head()
-
-# Selecting only station A13
-P33 = TS[TS['X.stn'] == "P33"].loc[:,"Stage_cm"] # P33 has very low missingness, good for training rnn
-P33.head
-
+P33 = pd.read_csv("Data/P33.csv",index_col= "date", parse_dates = True)
 # Date filtering
 P33 = P33[P33.index >= "1995-01-01"]
-
-# Interpolation
-print(P33.isnull().sum()) # 402 missing values present
-P33_interp = P33.interpolate(method = "spline", order = 4) # Spline interpolation for missing values
-print(P33.isnull().sum()) # 0 missing values present
-#P33_interp.plot(figsize=(12,6), color = 'r')
-#P33.plot(figsize = (12,6), color = 'b')
-#plt.show()
-
 # Length of time series
 len(P33)
 
 # Splitting dataset for cross-validation
 train_size = int(len(P33) * 0.9) # Use 90% of data for training
-train = P33_interp.iloc[0:train_size]
-test = P33_interp.iloc[train_size:len(P33)] 
+train = P33.iloc[0:train_size]
+test = P33.iloc[train_size:len(P33)] 
 
 # Reshaping data sets from Panda Series to 1D Array
 train = train.values.flatten()

@@ -30,18 +30,21 @@ train = train.values.flatten()
 train = train.reshape(-1,1)
 stage_transformer = RobustScaler()
 stage_transformer = stage_transformer.fit(train)
+scaled_train = stage_transformer.transform(train)
+n_input = 31
+n_features = 1
 
 # Fit ARIMA
 
-model = auto_arima(train)
-model.fit(train)
-model.summary()
-arima_preds = model.predict(n_periods = 31)
-forecast = pd.DataFrame(arima_preds,index = P33.index,columns=['Prediction'])
+model_arima = auto_arima(train)
+model_arima.fit(train)
+model_arima.summary()
+arima_preds = model_arima.predict(n_periods = 31)
+forecast = pd.DataFrame(arima_preds, index = P33.index[train_size:train_size + 31], columns=['Prediction'])
 
 # Load LSTM
 
-model = tf.keras.models.load_model('Best.keras')
+model = tf.keras.models.load_model('Models/Best_3_Layer_LSTM.keras')
 duration = 31
 test_predictions = []
 test = P33.iloc[train_size:train_size + duration] 
@@ -58,7 +61,13 @@ true_predictions = stage_transformer.inverse_transform(test_predictions)
 metrics.mean_squared_error(test, true_predictions) # LSTM MSE
 metrics.mean_squared_error(arima_preds, test) # ARIMA MSE
 
-plt.plot(test, color = 'b', label = True)
-plt.plot(true_predictions, color = 'r', label = True)
-plt.plot(arima_preds, color = 'g', label = True)
+fig = plt.figure(figsize=(10,5))
+ax = fig.add_subplot(111)
+plt.plot(test, color = 'b', label = "Observed")
+plt.plot(true_predictions, color = 'r', label = "LSTM")
+plt.plot(arima_preds, color = 'g', label = "ARIMA")
+plt.legend()
+ax.set_xlabel("Depth (feet)")
+ax.set_ylabel("Day's Past Training Data")
+ax.set_title("Comparison of Forecasts")
 plt.show()

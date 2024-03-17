@@ -63,6 +63,11 @@ Ruiz, P. (2019).
 \newblock Ml approached for time seires.
 \newblock {\em Medium}.
 
+\bibitem[Snoek et~al., 2012]{NIPS2012_05311655}
+Snoek, J., Larochelle, H., and Adams, R.~P. (2012).
+\newblock Practical bayesian optimization of machine learning algorithms.
+\newblock In Pereira, F., Burges, C., Bottou, L., and Weinberger, K., editors, {\em Advances in Neural Information Processing Systems}, volume~25. Curran Associates, Inc.
+
 \bibitem[{Warren Liao}, 2005]{WARRENLIAO20051857}
 {Warren Liao}, T. (2005).
 \newblock Clustering of time series data—a survey.
