@@ -3,10 +3,7 @@ library(forecast)
 
 theme_set(theme_bw())
 
-Data = read_csv("Data/Cleaned_Data.csv")
-
-P33 = Data %>% 
-  filter(X.stn == "P33")
+P33 = read_csv("Data/P33.csv")
 
 # P33 --------------------------------------------------------------------------
 P33_raw = P33 %>% 
@@ -19,7 +16,7 @@ P33_raw = P33 %>%
 P33_raw
 
 ggsave(P33_raw,
-       filename = "Figures/P33_Time_Series.png",
+       filename = "Deliverables/Written Component/Figures/P33_Time_Series.png",
        scale = 2,
        width = 2000,
        height = 1000,
@@ -48,7 +45,7 @@ P33_missingness = P33_complete %>%
 P33_missingness
 
 ggsave(P33_missingness,
-       filename = "Figures/P33_Time_Series_Missingness.png",
+       filename = "Deliverables/Written Component/Figures/P33_Time_Series_Missingness.png",
        scale = 2,
        width = 2000,
        height = 1000,
@@ -70,7 +67,7 @@ P33_1980_2000 = P33 %>%
 P33_1980_2000
 
 ggsave(P33_1980_2000,
-       filename = "Figures/P33_Time_Series_Missingness_1980_to_2000.png",
+       filename = "Deliverables/Written Component/Figures/P33_Time_Series_Missingness_1980_to_2000.png",
        scale = 2,
        width = 2000,
        height = 1000,
@@ -90,7 +87,7 @@ P33_1980_2000_imputed = P33 %>%
 P33_1980_2000_imputed
 
 ggsave(P33_1980_2000_imputed,
-       filename = "Figures/P33_Time_Series_Missingness_1980_to_2000_Imputed.png",
+       filename = "Deliverables/Written Component/Figures/P33_Time_Series_Missingness_1980_to_2000_Imputed.png",
        scale = 2,
        width = 2000,
        height = 1000,

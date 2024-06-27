@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1719420059.03313 "main.aux" "main.bbl" "main" 1719420061.82093 0
+["bibtex main"] 1719420059.03313 "main.aux" "main.bbl" "main" 1719513876.13176 0
   "./writingproject.bib" 1719419714 6518 86b11da8f255509c680d2d846012c4c4 ""
   "C:/Users/eliot/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/apalike.bst" 1291972791 24635 604dafcc79f521a11ea73e506e1fbd98 ""
-  "main.aux" 1719420061 5830 da25af9e02251be6bb38af5a62e0b2ae "pdflatex"
+  "main.aux" 1719513874 5830 da25af9e02251be6bb38af5a62e0b2ae "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1719420059.26354 "c:/Users/eliot/OneDrive/Desktop/Writing-Project/Deliverables/Written Component/main.tex" "main.pdf" "main" 1719420061.82139 0
+["pdflatex"] 1719513869.49553 "c:/Users/eliot/OneDrive/Desktop/Writing-Project/Deliverables/Written Component/main.tex" "main.pdf" "main" 1719513876.13246 0
   "C:/Users/eliot/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1719411081 249825 576c6e060f29551f693093c60c2592ad ""
   "C:/Users/eliot/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1713880327 24236006 de99f18395dc98179d17d12d7f30f4ff ""
   "C:/Users/eliot/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/ectt1000.tfm" 993062340 1348 d70ddf2d5d512b838e50a335e385e919 ""
@@ -114,11 +114,11 @@
   "C:/Users/eliot/AppData/Local/Programs/MiKTeX/tex/latex/translations/translations.sty" 1644048522 44247 2188b95d0ee74e31eca4d316263c58a7 ""
   "C:/Users/eliot/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/eliot/AppData/Local/Programs/MiKTeX/tex/latex/wrapfig/wrapfig.sty" 1044403200 26220 3701aebf80ccdef248c0c20dd062fea9 ""
-  "Figures/Activations.png" 1719416733 47869 2b286f04eaa93e1f8be687d7208f643f ""
-  "Figures/Interpolation_60_20.png" 1709847267 127075 c6b6193fbb6c68e4abf21ba9e94f15e3 ""
+  "Figures/Activations.png" 1719513474 47869 2b286f04eaa93e1f8be687d7208f643f ""
+  "Figures/Interpolation_60_20.png" 1719513844 126758 320c922ed2fea2571ebf3cf6290b3aa9 ""
   "Figures/LSTM_Architecture.png" 1708709124 82156 d75a01a0734a414c8ac3262d5182de01 ""
   "Figures/LSTM_Memory_Cell.png" 1708709124 121100 b6fe3bdb0a933e1a7e406c9de2f3de60 ""
-  "Figures/P33_Time_Series_Missingness.png" 1708709124 375552 729802df02a5db2a3bdd954af613d437 ""
+  "Figures/P33_Time_Series_Missingness.png" 1719513471 374487 91b3a6650b3a80c752f1018026e2187e ""
   "Figures/Recurrent_NN.png" 1719415732 68342 1d4b7c3c53360a1c494c571d8c164182 ""
   "Figures/Traditional_NN.png" 1708709124 63806 354c5250177abe85f14566255505b56c ""
   "WPROJ.sty" 1719411142 1082 d0749bebce36d6f6dd02d869da87c913 ""
@@ -130,13 +130,13 @@
   "body/reflection.tex" 1719411869 0 d41d8cd98f00b204e9800998ecf8427e ""
   "body/results.tex" 1709570790 0 d41d8cd98f00b204e9800998ecf8427e ""
   "body/rnn.tex" 1719417920 2503 f33c47116f91de81fb4694a7bd38bb10 ""
-  "c:/Users/eliot/OneDrive/Desktop/Writing-Project/Deliverables/Written Component/main.tex" 1719420055 912 68f7a077abb04187177bbedbbd87d07b ""
+  "c:/Users/eliot/OneDrive/Desktop/Writing-Project/Deliverables/Written Component/main.tex" 1719513868 912 68f7a077abb04187177bbedbbd87d07b ""
   "coversheet.tex" 1709570790 1528 a5c55088ccb0501e91fb61ee91648aac ""
-  "main.aux" 1719420061 5830 da25af9e02251be6bb38af5a62e0b2ae "pdflatex"
+  "main.aux" 1719513874 5830 da25af9e02251be6bb38af5a62e0b2ae "pdflatex"
   "main.bbl" 1719420059 4027 34dff4c38fc82e84617ac52e752354a7 "bibtex main"
-  "main.out" 1719420061 880 4822eb9bacccad2e121838e0fa722446 "pdflatex"
-  "main.tex" 1719420055 912 68f7a077abb04187177bbedbbd87d07b ""
-  "main.toc" 1719420061 536 aff5643821466c3de44824ce165bf4b3 "pdflatex"
+  "main.out" 1719513874 880 4822eb9bacccad2e121838e0fa722446 "pdflatex"
+  "main.tex" 1719513868 912 68f7a077abb04187177bbedbbd87d07b ""
+  "main.toc" 1719513874 536 aff5643821466c3de44824ce165bf4b3 "pdflatex"
   (generated)
   "main.aux"
   "main.log"

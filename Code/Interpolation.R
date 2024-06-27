@@ -1,7 +1,9 @@
 library(imputeTS)
 library(tidyverse)
 
-Data = read_csv("Data/Shark_Slough.csv")
+theme_set(theme_bw())
+
+Data = read_csv("Data/Cleaned_Data.csv")
 
 P33 = Data %>% 
     filter(X.stn == "P33") %>%
@@ -16,7 +18,7 @@ interpolation = P33 %>%
     labs(x = "Date", y = "Depth")
 
 ggsave(interpolation, 
-    filename = "Figures/Interpolation.png",
+    filename = "Deliverables/Written Component/Figures/Interpolation.png",
     scale = 1,
     height = 1000,
     width = 2000,
@@ -30,14 +32,14 @@ interpolation_80_00 = P33 %>%
     labs(x = "Date", y = "Depth")
 
 ggsave(interpolation_80_00, 
-    filename = "Figures/Interpolation_60_20.png",
+    filename = "Deliverables/Written Component/Figures/Interpolation_60_20.png",
     scale = 1,
     height = 1000,
     width = 2000,
     units = 'px')
 
 P33 = P33 %>%
-    select(date, Depth_Interp) %>%
-    rename(Depth = Depth_Interp)
+    select(date, Depth_Int) %>%
+    rename(Depth = Depth_Int)
 
 write_csv(P33, "Data/P33.csv")
