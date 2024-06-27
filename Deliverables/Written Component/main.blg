@@ -1,48 +1,50 @@
-This is BibTeX, Version 0.99d (TeX Live 2023)
+This is BibTeX, Version 0.99d
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
+Reallocating 'name_of_file' (item size: 1) to 8 items.
 The style file: apalike.bst
+Reallocating 'name_of_file' (item size: 1) to 19 items.
 Database file #1: writingproject.bib
 Warning--empty journal in understandinglstm
-You've used 15 entries,
+You've used 18 entries,
             1935 wiz_defined-function locations,
-            566 strings with 5918 characters,
-and the built_in function-call counts, 5373 in all, are:
-= -- 507
-> -- 225
-< -- 12
-+ -- 78
-- -- 72
-* -- 445
-:= -- 969
-add.period$ -- 44
-call.type$ -- 15
-change.case$ -- 104
-chr.to.int$ -- 15
-cite$ -- 16
-duplicate$ -- 207
-empty$ -- 376
-format.name$ -- 99
-if$ -- 1030
+            590 strings with 6504 characters,
+and the built_in function-call counts, 6568 in all, are:
+= -- 630
+> -- 263
+< -- 14
++ -- 92
+- -- 84
+* -- 551
+:= -- 1173
+add.period$ -- 53
+call.type$ -- 18
+change.case$ -- 125
+chr.to.int$ -- 18
+cite$ -- 19
+duplicate$ -- 249
+empty$ -- 465
+format.name$ -- 116
+if$ -- 1261
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 18
-newline$ -- 76
-num.names$ -- 47
-pop$ -- 99
+missing$ -- 21
+newline$ -- 91
+num.names$ -- 56
+pop$ -- 112
 preamble$ -- 1
-purify$ -- 108
+purify$ -- 129
 quote$ -- 0
-skip$ -- 157
+skip$ -- 189
 stack$ -- 0
-substring$ -- 324
-swap$ -- 15
+substring$ -- 437
+swap$ -- 18
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 82
+type$ -- 100
 warning$ -- 1
-while$ -- 40
+while$ -- 52
 width$ -- 0
-write$ -- 188
+write$ -- 227
 (There was 1 warning)

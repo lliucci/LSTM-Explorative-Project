@@ -4,13 +4,32 @@
 \providecommand\HyField@AuxAddToCoFields[2]{}
 \@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{3}{section.1}\protected@file@percent }
 \newlabel{sec:intro}{{1}{3}{Introduction}{section.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.1}This is a Subsection}{3}{subsection.1.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {2}Literature Review}{3}{section.2}\protected@file@percent }
-\newlabel{sec:background}{{2}{3}{Literature Review}{section.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3}Methods}{3}{section.3}\protected@file@percent }
-\newlabel{sec:methods}{{3}{3}{Methods}{section.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Conclusion}{3}{section.4}\protected@file@percent }
-\newlabel{sec:conclusion}{{4}{3}{Conclusion}{section.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces A flowchart depicting a single-layer Neural Network. The input layer (blue) contains a single node, indicating a single value would be taken as an input. The hidden state (green) contains a single layer of \textit  {n} nodes. The output layer (red) contains a single node, indicating a single value would be received as an output. Graphic made with LucidChart.}}{3}{figure.1}\protected@file@percent }
+\newlabel{fig:NueralNetwork}{{1}{3}{A flowchart depicting a single-layer Neural Network. The input layer (blue) contains a single node, indicating a single value would be taken as an input. The hidden state (green) contains a single layer of \textit {n} nodes. The output layer (red) contains a single node, indicating a single value would be received as an output. Graphic made with LucidChart}{figure.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces A comparison of common activation functions. The purpose of this visualization is to show how the range of the inputs compares to the range of the outputs for different activations.}}{4}{figure.2}\protected@file@percent }
+\newlabel{fig:Activations}{{2}{4}{A comparison of common activation functions. The purpose of this visualization is to show how the range of the inputs compares to the range of the outputs for different activations}{figure.2}{}}
+\citation{rumelhart1986learning}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1}Recurrent Neural Networks}{5}{subsection.1.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces A visualization of an "unrolled" recurrent neural network. This specific example uses 3 time-points of information to get a prediction.}}{5}{figure.3}\protected@file@percent }
+\newlabel{fig:RNN}{{3}{5}{A visualization of an "unrolled" recurrent neural network. This specific example uses 3 time-points of information to get a prediction}{figure.3}{}}
+\citation{hochreiter1997long}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2}Long Short-Term Memory Networks}{6}{subsection.1.2}\protected@file@percent }
+\citation{understandinglstm}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces A visualization of long short-term memory networks.}}{7}{figure.4}\protected@file@percent }
+\newlabel{fig:LSTM}{{4}{7}{A visualization of long short-term memory networks}{figure.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces A visualization of the memory cells in LSTMs.}}{7}{figure.5}\protected@file@percent }
+\newlabel{fig:MemoryCells}{{5}{7}{A visualization of the memory cells in LSTMs}{figure.5}{}}
+\citation{kalmanfilter}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.3}EVER Data}{9}{subsection.1.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces A line plot of the time series used to train the LSTM in this project. Red vertical bars indicate a date with a missing value.}}{9}{figure.6}\protected@file@percent }
+\newlabel{fig:P33}{{6}{9}{A line plot of the time series used to train the LSTM in this project. Red vertical bars indicate a date with a missing value}{figure.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces A line plot of the time series used to train the LSTM in this project. Red lines indicate the imputed values using the Kalman filter. Note that this plot focuses on 1960 to 2000, despite imputation being performed across the entire time series.}}{10}{figure.7}\protected@file@percent }
+\newlabel{fig:P33_Interpolated}{{7}{10}{A line plot of the time series used to train the LSTM in this project. Red lines indicate the imputed values using the Kalman filter. Note that this plot focuses on 1960 to 2000, despite imputation being performed across the entire time series}{figure.7}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Methods}{10}{section.2}\protected@file@percent }
+\newlabel{sec:methods}{{2}{10}{Methods}{section.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Results}{10}{section.3}\protected@file@percent }
+\newlabel{sec:results}{{3}{10}{Results}{section.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Reflection}{10}{subsection.3.1}\protected@file@percent }
 \bibstyle{apalike}
 \citation{*}
 \bibdata{writingproject.bib}
@@ -19,14 +38,17 @@
 \bibcite{understandinglstm}{{3}{2015}{{colah}}{{}}}
 \bibcite{everitt2011introduction}{{4}{2011}{{Everitt and Hothorn}}{{}}}
 \bibcite{lstmkeras}{{5}{2021}{{Hebbar}}{{}}}
-\bibcite{james2013introduction}{{6}{2013}{{James et~al.}}{{}}}
-\bibcite{lim2021time}{{7}{2021}{{Lim and Zohren}}{{}}}
-\bibcite{maharaj2019time}{{8}{2019}{{Maharaj et~al.}}{{}}}
-\bibcite{medsker1999recurrent}{{9}{1999}{{Medsker and Jain}}{{}}}
-\bibcite{milligan1985examination}{{10}{1985}{{Milligan and Cooper}}{{}}}
-\bibcite{prakaisak2022hydrological}{{11}{2022}{{Prakaisak and Wongchaisuwat}}{{}}}
-\bibcite{rani2012recent}{{12}{2012}{{Rani and Sikka}}{{}}}
-\bibcite{ruiz2019machinelearning}{{13}{2019}{{Ruiz}}{{}}}
-\bibcite{NIPS2012_05311655}{{14}{2012}{{Snoek et~al.}}{{}}}
-\bibcite{WARRENLIAO20051857}{{15}{2005}{{Warren Liao}}{{}}}
-\gdef \@abspage@last{7}
+\bibcite{hochreiter1997long}{{6}{1997}{{Hochreiter and Schmidhuber}}{{}}}
+\bibcite{james2013introduction}{{7}{2013}{{James et~al.}}{{}}}
+\bibcite{kalmanfilter}{{8}{1960}{{Kalman}}{{}}}
+\bibcite{lim2021time}{{9}{2021}{{Lim and Zohren}}{{}}}
+\bibcite{maharaj2019time}{{10}{2019}{{Maharaj et~al.}}{{}}}
+\bibcite{medsker1999recurrent}{{11}{1999}{{Medsker and Jain}}{{}}}
+\bibcite{milligan1985examination}{{12}{1985}{{Milligan and Cooper}}{{}}}
+\bibcite{prakaisak2022hydrological}{{13}{2022}{{Prakaisak and Wongchaisuwat}}{{}}}
+\bibcite{rani2012recent}{{14}{2012}{{Rani and Sikka}}{{}}}
+\bibcite{ruiz2019machinelearning}{{15}{2019}{{Ruiz}}{{}}}
+\bibcite{rumelhart1986learning}{{16}{1986}{{Rumelhart et~al.}}{{}}}
+\bibcite{NIPS2012_05311655}{{17}{2012}{{Snoek et~al.}}{{}}}
+\bibcite{WARRENLIAO20051857}{{18}{2005}{{Warren Liao}}{{}}}
+\gdef \@abspage@last{14}

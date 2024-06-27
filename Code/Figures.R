@@ -1,6 +1,8 @@
 library(tidyverse)
 library(forecast)
 
+theme_set(theme_bw())
+
 Data = read_csv("Data/Cleaned_Data.csv")
 
 P33 = Data %>% 
@@ -93,3 +95,27 @@ ggsave(P33_1980_2000_imputed,
        width = 2000,
        height = 1000,
        units = 'px')
+
+# Graphics depicting activation functions ----------------
+
+x = seq(-3, 3, 0.1)
+Linear = x
+ReLU = ifelse(x<0, 0, x)
+Tanh = tanh(x)
+Sigmoid = 1/(1 + exp(-x))
+
+activations = tibble(x, Linear, ReLU, Tanh, Sigmoid) %>%
+  pivot_longer(cols = 2:5,
+              names_to = "Activation",
+              values_to = "Value") %>%
+  ggplot(aes(x = x, y = Value)) +
+  geom_line() +
+  labs(x = "Input", y = "Output") +
+  facet_wrap(~Activation, nrow = 1)
+
+ggsave(activations,
+      filename = "Deliverables/Written Component/Figures/Activations.png",
+      scale = 1,
+      width = 1200,
+      height = 800,
+      units = 'px')

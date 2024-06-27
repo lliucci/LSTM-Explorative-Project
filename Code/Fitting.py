@@ -27,7 +27,7 @@ print(device_lib.list_local_devices())
 os.getcwd()
 
 # Reading in data
-P33 = pd.read_csv("Data/P33.csv",index_col= "date", parse_dates = True)
+P33 = pd.read_csv("Data/P33.csv", index_col = 'date', parse_dates = True)
 # Date filtering
 P33 = P33[P33.index >= "1995-01-01"]
 # Length of time series
@@ -35,8 +35,8 @@ len(P33)
 
 # Splitting dataset for cross-validation
 train_size = int(len(P33) * 0.9) # Use 90% of data for training
-train = P33.iloc[0:train_size]
-test = P33.iloc[train_size:len(P33)] 
+train = P33.iloc[0:train_size,1]
+test = P33.iloc[train_size:len(P33),1] 
 
 # Reshaping data sets from Panda Series to 1D Array
 train = train.values.flatten()
@@ -55,41 +55,37 @@ n_input = 31
 n_features = 1
 generator = TimeseriesGenerator(scaled_train, scaled_train, 
                                 length = n_input,
-                                batch_size = 40000) # Update network after 3 months of information, speeds up training
+                                batch_size = 100) # Update network after 3 months of information, speeds up training
 
 # Model Definition  
 model = Sequential() # layers are added sequentially
-model.add(LSTM(128, 
+model.add(LSTM(16, 
                 activation = 'tanh', 
                 input_shape = (n_input, n_features),
                 return_sequences=True,
-                kernel_regularizer=regularizers.L1(0.001),
+                kernel_regularizer=regularizers.L2(0.001),
                 activity_regularizer=regularizers.L2(0.001)))
-model.add(Dropout(0.3))
-model.add(LSTM(64, 
-                activation = 'tanh', 
-                input_shape = (n_input, n_features),
-                return_sequences=True,
-                kernel_regularizer=regularizers.L1(0.001),
-                activity_regularizer=regularizers.L2(0.001)))
-model.add(Dropout(0.3))
-model.add(LSTM(32, 
+model.add(Dropout(0.05))
+model.add(LSTM(16, 
                 activation = 'tanh', 
                 input_shape = (n_input, n_features),
                 return_sequences=False,
-                kernel_regularizer=regularizers.L1(0.001),
+                kernel_regularizer=regularizers.L2(0.001),
                 activity_regularizer=regularizers.L2(0.001)))
-model.add(Dropout(0.3))
-model.add(Dense(20))
-model.add(Dropout(0.3))
+model.add(Dropout(0.05))
 model.add(Dense(1))
-model.compile(optimizer = Adam(learning_rate=0.005), 
+model.compile(optimizer = Adam(learning_rate=0.0001,
+                               clipnorm = 1), 
               loss = 'mse')
 model.summary()
 
+gen_output = TimeseriesGenerator(scaled_test, scaled_test, 
+                                length = n_input,
+                                batch_size = 100)
+
 # Fitting model  
-with tf.device('/device:GPU:0'): 
-    model.fit(generator, epochs = 2000)
+#with tf.device('/device:GPU:0'): 
+model.fit(generator, epochs = 50, validation_data = gen_output)
 
 # Loop for training
 
@@ -126,7 +122,7 @@ with tf.device('/device:GPU:0'):
 # True Out of Sample Predictions
 duration = 31
 test_predictions = []
-test = P33_interp.iloc[train_size:train_size + duration] 
+test = P33.iloc[train_size:train_size + duration,1] 
 test = test.values.flatten()
 test = test.reshape(-1,1)
 first_eval_batch = scaled_train[-n_input:]

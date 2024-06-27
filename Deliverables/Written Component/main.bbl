@@ -7,7 +7,8 @@ Aghabozorgi, S., Shirkhorshidi, A.~S., and Wah, T.~Y. (2015).
 
 \bibitem[Akusok et~al., 2015]{akusok2015high}
 Akusok, A., Bj{\"o}rk, K.-M., Miche, Y., and Lendasse, A. (2015).
-\newblock High-performance extreme learning machines: a complete toolbox for big data applications.
+\newblock High-performance extreme learning machines: a complete toolbox for
+  big data applications.
 \newblock {\em IEEE Access}, 3:1011--1025.
 
 \bibitem[colah, 2015]{understandinglstm}
@@ -23,15 +24,27 @@ Everitt, B. and Hothorn, T. (2011).
 Hebbar, N. (2021).
 \newblock Time series forecasting with rnn(lstm)| complete python tutorial|.
 
+\bibitem[Hochreiter and Schmidhuber, 1997]{hochreiter1997long}
+Hochreiter, S. and Schmidhuber, J. (1997).
+\newblock Long short-term memory.
+\newblock {\em Neural computation}, 9(8):1735--1780.
+
 \bibitem[James et~al., 2013]{james2013introduction}
 James, G., Witten, D., Hastie, T., Tibshirani, R., et~al. (2013).
 \newblock {\em An introduction to statistical learning}, volume 112.
 \newblock Springer.
 
+\bibitem[Kalman, 1960]{kalmanfilter}
+Kalman, R.~E. (1960).
+\newblock A new approach to linear filtering and prediction problems.
+\newblock {\em Transactions of the ASME--Journal of Basic Engineering},
+  82(Series D):35--45.
+
 \bibitem[Lim and Zohren, 2021]{lim2021time}
 Lim, B. and Zohren, S. (2021).
 \newblock Time-series forecasting with deep learning: a survey.
-\newblock {\em Philosophical Transactions of the Royal Society A}, 379(2194):20200209.
+\newblock {\em Philosophical Transactions of the Royal Society A},
+  379(2194):20200209.
 
 \bibitem[Maharaj et~al., 2019]{maharaj2019time}
 Maharaj, E.~A., D'Urso, P., and Caiado, J. (2019).
@@ -45,12 +58,14 @@ Medsker, L. and Jain, L.~C. (1999).
 
 \bibitem[Milligan and Cooper, 1985]{milligan1985examination}
 Milligan, G.~W. and Cooper, M.~C. (1985).
-\newblock An examination of procedures for determining the number of clusters in a data set.
+\newblock An examination of procedures for determining the number of clusters
+  in a data set.
 \newblock {\em Psychometrika}, 50:159--179.
 
 \bibitem[Prakaisak and Wongchaisuwat, 2022]{prakaisak2022hydrological}
 Prakaisak, I. and Wongchaisuwat, P. (2022).
-\newblock Hydrological time series clustering: A case study of telemetry stations in thailand.
+\newblock Hydrological time series clustering: A case study of telemetry
+  stations in thailand.
 \newblock {\em Water}, 14(13):2095.
 
 \bibitem[Rani and Sikka, 2012]{rani2012recent}
@@ -63,10 +78,19 @@ Ruiz, P. (2019).
 \newblock Ml approached for time seires.
 \newblock {\em Medium}.
 
+\bibitem[Rumelhart et~al., 1986]{rumelhart1986learning}
+Rumelhart, D.~E., Hinton, G.~E., and Williams, R.~J. (1986).
+\newblock Learning internal representations by error propagation, parallel
+  distributed processing, explorations in the microstructure of cognition, ed.
+  de rumelhart and j. mcclelland. vol. 1. 1986.
+\newblock {\em Biometrika}, 71:599--607.
+
 \bibitem[Snoek et~al., 2012]{NIPS2012_05311655}
 Snoek, J., Larochelle, H., and Adams, R.~P. (2012).
 \newblock Practical bayesian optimization of machine learning algorithms.
-\newblock In Pereira, F., Burges, C., Bottou, L., and Weinberger, K., editors, {\em Advances in Neural Information Processing Systems}, volume~25. Curran Associates, Inc.
+\newblock In Pereira, F., Burges, C., Bottou, L., and Weinberger, K., editors,
+  {\em Advances in Neural Information Processing Systems}, volume~25. Curran
+  Associates, Inc.
 
 \bibitem[{Warren Liao}, 2005]{WARRENLIAO20051857}
 {Warren Liao}, T. (2005).
