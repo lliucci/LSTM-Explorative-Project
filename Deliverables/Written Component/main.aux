@@ -20,35 +20,39 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces A visualization of the memory cells in LSTMs.}}{7}{figure.5}\protected@file@percent }
 \newlabel{fig:MemoryCells}{{5}{7}{A visualization of the memory cells in LSTMs}{figure.5}{}}
 \citation{kalmanfilter}
+\citation{chollet2015keras}
+\citation{lstmkeras}
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.3}EVER Data}{9}{subsection.1.3}\protected@file@percent }
+\newlabel{sec:EVER}{{1.3}{9}{EVER Data}{subsection.1.3}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces A line plot of the time series used to train the LSTM in this project. Red vertical bars indicate a date with a missing value.}}{9}{figure.6}\protected@file@percent }
 \newlabel{fig:P33}{{6}{9}{A line plot of the time series used to train the LSTM in this project. Red vertical bars indicate a date with a missing value}{figure.6}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces A line plot of the time series used to train the LSTM in this project. Red lines indicate the imputed values using the Kalman filter. Note that this plot focuses on 1960 to 2000, despite imputation being performed across the entire time series.}}{10}{figure.7}\protected@file@percent }
-\newlabel{fig:P33_Interpolated}{{7}{10}{A line plot of the time series used to train the LSTM in this project. Red lines indicate the imputed values using the Kalman filter. Note that this plot focuses on 1960 to 2000, despite imputation being performed across the entire time series}{figure.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces A line plot of the time series used to train the LSTM in this project. Red lines indicate the imputed values using the Kalman filter. Note that this plot focuses on 1980 to 2000, despite imputation being performed across the entire time series.}}{10}{figure.7}\protected@file@percent }
+\newlabel{fig:P33_Interpolated}{{7}{10}{A line plot of the time series used to train the LSTM in this project. Red lines indicate the imputed values using the Kalman filter. Note that this plot focuses on 1980 to 2000, despite imputation being performed across the entire time series}{figure.7}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {2}Methods}{10}{section.2}\protected@file@percent }
 \newlabel{sec:methods}{{2}{10}{Methods}{section.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3}Results}{10}{section.3}\protected@file@percent }
-\newlabel{sec:results}{{3}{10}{Results}{section.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Reflection}{10}{subsection.3.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces A series of plots obtained from the training process. Each plot shows the predicted water depths 31 days past the training set. The red line indicates the predictions from the LSTM and the blue line indicates the observed water depth. The number below each plot indicates how many generations the LSTM was trained for when the predictions were made.}}{11}{figure.8}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {2,530}}}{11}{subfigure.8.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {4,530}}}{11}{subfigure.8.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {6,530}}}{11}{subfigure.8.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {8,530}}}{11}{subfigure.8.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {10,530}}}{11}{subfigure.8.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {12,530}}}{11}{subfigure.8.6}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(g)}{\ignorespaces {14,530}}}{11}{subfigure.8.7}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(h)}{\ignorespaces {16,530}}}{11}{subfigure.8.8}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(i)}{\ignorespaces {18,530}}}{11}{subfigure.8.9}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(j)}{\ignorespaces {20,5530}}}{11}{subfigure.8.10}\protected@file@percent }
+\newlabel{fig:Training}{{8}{11}{A series of plots obtained from the training process. Each plot shows the predicted water depths 31 days past the training set. The red line indicates the predictions from the LSTM and the blue line indicates the observed water depth. The number below each plot indicates how many generations the LSTM was trained for when the predictions were made}{figure.8}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Results}{12}{section.3}\protected@file@percent }
+\newlabel{sec:results}{{3}{12}{Results}{section.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces A comparison of 31 day forecasts between the 3 models. Each model was trained on the same data.}}{12}{figure.9}\protected@file@percent }
+\newlabel{fig:Comparison}{{9}{12}{A comparison of 31 day forecasts between the 3 models. Each model was trained on the same data}{figure.9}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Reflection}{12}{subsection.3.1}\protected@file@percent }
 \bibstyle{apalike}
-\citation{*}
 \bibdata{writingproject.bib}
-\bibcite{aghabozorgi2015time}{{1}{2015}{{Aghabozorgi et~al.}}{{}}}
-\bibcite{akusok2015high}{{2}{2015}{{Akusok et~al.}}{{}}}
-\bibcite{understandinglstm}{{3}{2015}{{colah}}{{}}}
-\bibcite{everitt2011introduction}{{4}{2011}{{Everitt and Hothorn}}{{}}}
-\bibcite{lstmkeras}{{5}{2021}{{Hebbar}}{{}}}
-\bibcite{hochreiter1997long}{{6}{1997}{{Hochreiter and Schmidhuber}}{{}}}
-\bibcite{james2013introduction}{{7}{2013}{{James et~al.}}{{}}}
-\bibcite{kalmanfilter}{{8}{1960}{{Kalman}}{{}}}
-\bibcite{lim2021time}{{9}{2021}{{Lim and Zohren}}{{}}}
-\bibcite{maharaj2019time}{{10}{2019}{{Maharaj et~al.}}{{}}}
-\bibcite{medsker1999recurrent}{{11}{1999}{{Medsker and Jain}}{{}}}
-\bibcite{milligan1985examination}{{12}{1985}{{Milligan and Cooper}}{{}}}
-\bibcite{prakaisak2022hydrological}{{13}{2022}{{Prakaisak and Wongchaisuwat}}{{}}}
-\bibcite{rani2012recent}{{14}{2012}{{Rani and Sikka}}{{}}}
-\bibcite{ruiz2019machinelearning}{{15}{2019}{{Ruiz}}{{}}}
-\bibcite{rumelhart1986learning}{{16}{1986}{{Rumelhart et~al.}}{{}}}
-\bibcite{NIPS2012_05311655}{{17}{2012}{{Snoek et~al.}}{{}}}
-\bibcite{WARRENLIAO20051857}{{18}{2005}{{Warren Liao}}{{}}}
-\gdef \@abspage@last{14}
+\bibcite{chollet2015keras}{{1}{2015}{{Chollet et~al.}}{{}}}
+\bibcite{understandinglstm}{{2}{2015}{{colah}}{{}}}
+\bibcite{lstmkeras}{{3}{2021}{{Hebbar}}{{}}}
+\bibcite{hochreiter1997long}{{4}{1997}{{Hochreiter and Schmidhuber}}{{}}}
+\bibcite{kalmanfilter}{{5}{1960}{{Kalman}}{{}}}
+\bibcite{rumelhart1986learning}{{6}{1986}{{Rumelhart et~al.}}{{}}}
+\gdef \@abspage@last{16}

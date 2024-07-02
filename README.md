@@ -2,8 +2,7 @@
 
 __Chair:__ John Smith  
 
-
-__Additional Members:__ Samidha Shetty and Katharine Banner
+__Additional Members:__ Samidha Shetty, Katharine Banner, and Scott McCalla
 
 # Writing Project Proposal 
 
@@ -11,9 +10,10 @@ The focus of my writing project will be on applications of machine learning tech
 
 # To-Dos
 
-  - Committee form in MyInfo
-  - Program of Study Form
-  - Find Meeting Time for Spring 2024
+  - Finish Rough Draft
+  - ~~Committee form in MyInfo~~
+  - ~~Program of Study Form~~
+  - ~~Find Meeting Time for Spring 2024~~
   - ~~Reach out to Kathi Irvine regarding use of GRA data~~ [Confirmed, Jan 4th, 2024]
 
 # Potential Framework
@@ -28,5 +28,4 @@ The focus of my writing project will be on applications of machine learning tech
   - Benefits of RNNs over traditional ARMA models
 - Results
   - Forecasting accuracy
-  - Imputation
-- Reflection/Additional Applications
+  - Reflection/Additional Applications

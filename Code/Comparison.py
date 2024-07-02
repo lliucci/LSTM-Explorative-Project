@@ -4,6 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import pyplot
 from statsmodels.tsa.arima.model import ARIMA
+from statsmodels.tsa.holtwinters import ExponentialSmoothing
 from pmdarima.arima import auto_arima
 from keras.preprocessing.sequence import TimeseriesGenerator
 from sklearn.preprocessing import RobustScaler
@@ -15,13 +16,9 @@ from keras import regularizers
 
 
 # Reading in data
-df = pd.read_csv("Data/Shark_Slough.csv",index_col= "date", parse_dates = True)
-# Selecting X.stn and Stage_cm
-TS = df.loc[:, ["X.stn","Stage_cm"]]
-# Selecting only station A13
-P33 = TS[TS['X.stn'] == "P33"].loc[:,"Stage_cm"] # P33 has very low missingness, good for training rnn
-P33 = P33[P33.index >= "1995-01-01"] # Start date for analysis
-P33 = P33.interpolate(method = "linear") # Linear interpolation for missing values
+P33 = pd.read_csv("Data/P33.csv", index_col = 'date', parse_dates = True)
+# Date filtering
+P33 = P33[P33.index >= "1995-01-01"]
 # Length of time series
 len(P33)
 train_size = int(len(P33) * 0.9) # Use 95% of data for training
@@ -42,9 +39,14 @@ model_arima.summary()
 arima_preds = model_arima.predict(n_periods = 31)
 forecast = pd.DataFrame(arima_preds, index = P33.index[train_size:train_size + 31], columns=['Prediction'])
 
+# Fit HW
+
+HW = ExponentialSmoothing(train, trend = 'add', seasonal = 'add', seasonal_periods = 365).fit()
+HW_preds = HW.forecast(31)
+
 # Load LSTM
 
-model = tf.keras.models.load_model('Models/Best_3_Layer_LSTM.keras')
+model = tf.keras.models.load_model('Models/Best_HT_LSTM_20530.keras')
 duration = 31
 test_predictions = []
 test = P33.iloc[train_size:train_size + duration] 
@@ -66,8 +68,9 @@ ax = fig.add_subplot(111)
 plt.plot(test, color = 'b', label = "Observed")
 plt.plot(true_predictions, color = 'r', label = "LSTM")
 plt.plot(arima_preds, color = 'g', label = "ARIMA")
+plt.plot(HW_preds, color = 'y', label = "Holt-Winters")
 plt.legend()
 ax.set_ylabel("Depth (feet)")
-ax.set_xlabel("Day's Into The Future")
+ax.set_xlabel("Day's Past Training Data")
 ax.set_title("Comparison of Forecasts")
 plt.show()

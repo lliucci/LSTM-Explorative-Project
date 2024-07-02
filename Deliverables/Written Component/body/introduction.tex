@@ -18,10 +18,10 @@ The nodes within a neural network, specifically within the hidden layer, take an
     \label{fig:Activations}
 \end{figure}
 
-In addition to activation functions, each connection between nodes has a weight and bias. For example, the connection between $H_1$ and $X_1$ in Figure \ref{fig:NueralNetwork} would take the form:
+In addition to activation functions, each connection between nodes has a weight and bias. For example, the connection between $H_1$ and $X_t$ in Figure \ref{fig:NueralNetwork} would take the form:
 \begin{equation*}
-    H_1 = \sigma[w_1*X_1 + b_1]
+    H_1 = \sigma[w_1*X_t + b_1]
 \end{equation*}
-where $\sigma[]$ indicates the activation function being applied, $w_1$ indicates the weight, and $b_1$ indicates the bias. The weights and biases in a network are what get tuned in the training process.
+where $\sigma$ indicates the activation function being applied, $w_1$ indicates the weight, and $b_1$ indicates the bias. The weights and biases in a network are what get tuned in the training process.
 
 Training of neural networks occurs through the process of backpropogation, which is an application of the chain rule in calculus to determine how the output changes based on the change of a single parameter. The prediction of $y$ is compared to the observed value of $y$ in order to approximate a gradient, where each dimension represents a parameter. Then, gradient descent is used to find a minimum error, or loss, in the predictions.

@@ -44,8 +44,8 @@ len(P33)
 
 # Splitting dataset for cross-validation
 train_size = int(len(P33) * 0.9) # Use 90% of data for training
-train = P33.iloc[0:train_size,1]
-test = P33.iloc[train_size:len(P33),1] 
+train = P33.iloc[0:train_size]
+test = P33.iloc[train_size:len(P33)] 
 
 # Reshaping data sets from Panda Series to 1D Array
 train = train.values.flatten()
@@ -89,7 +89,7 @@ def build_model(hp):
     model.add(LSTM(hp.Int('layer_3_neurons', min_value = 8, max_value = 64), 
                     activation = hp.Choice('layer_3_activation', values = ['relu', 'tanh']), 
                     input_shape = (n_input, n_features),
-                    return_sequences=True,
+                    return_sequences=False,
                     kernel_regularizer=regularizers.L1(0.001),
                     activity_regularizer=regularizers.L2(0.001)))
     model.add(Dropout(hp.Choice('dropout_3', values = [0.01, 0.05, 0.1, 0.15])))
@@ -113,27 +113,71 @@ tuner= RandomSearch(
 
 tuner.search(
     x = generator,
-    epochs = 20,
+    epochs = 30,
     validation_data = validation
     )
 
+# Obtain best model from random search
 best_model = tuner.get_best_models()[0]
 
+# Train best model for an additional 100 epochs
+best_model.fit(generator, epochs = 500, validation_data = validation)
+
 # True Out of Sample Predictions
-duration = 100
+duration = 31
 test_predictions = []
-test = P33.iloc[train_size:train_size + duration,1] 
+test = P33.iloc[train_size:train_size + duration] 
 test = test.values.flatten()
 test = test.reshape(-1,1)
 first_eval_batch = scaled_train[-n_input:]
 current_batch = first_eval_batch.reshape((1, n_input, n_features))
 for i in range(duration):
-   current_pred = best_model.predict(current_batch)[0]
-   test_predictions.append(current_pred) 
-   current_batch = np.append(current_batch[:,1:,:],[[current_pred]],axis=1)
+    current_pred = best_model.predict(current_batch)[0]
+    test_predictions.append(current_pred) 
+    current_batch = np.append(current_batch[:,1:,:],[[current_pred]],axis=1)
 true_predictions = stage_transformer.inverse_transform(test_predictions)
-plt.plot(test, color = 'b', label = True)
-plt.plot(true_predictions, color = 'r', label = True)
+
+fig = plt.figure(figsize=(10,5))
+ax = fig.add_subplot(111)
+plt.plot(test, color = 'b', label = 'Observed')
+plt.plot(true_predictions, color = 'r', label = 'Predicted')
+plt.legend()
+ax.set_ylabel("Depth (feet)")
+ax.set_xlabel("Day's Into The Future")
+ax.set_title("Comparison of Forecasts")
 plt.show()
 
 metrics.mean_squared_error(test, true_predictions)
+
+# Loop for training
+
+for j in range(10):
+    
+    # Fitting model  
+    with tf.device('/device:GPU:0'): 
+        best_model.fit(generator, epochs = 2000)
+
+    # Check when loss levels out
+    # loss_per_epoch = model.history.history["loss"]
+    # plt.plot(range(len(loss_per_epoch)), loss_per_epoch)
+    # plt.show()
+
+    # True Out of Sample Predictions
+    duration = 31
+    test_predictions = []
+    test = P33.iloc[train_size:train_size + duration] 
+    test = test.values.flatten()
+    test = test.reshape(-1,1)
+    first_eval_batch = scaled_train[-n_input:]
+    current_batch = first_eval_batch.reshape((1, n_input, n_features))
+    for i in range(duration):
+        current_pred = best_model.predict(current_batch)[0]
+        test_predictions.append(current_pred) 
+        current_batch = np.append(current_batch[:,1:,:],[[current_pred]],axis=1)
+    true_predictions = stage_transformer.inverse_transform(test_predictions)
+    plt.plot(test, color = 'b', label = True)
+    plt.plot(true_predictions, color = 'r', label = True)
+    plt.savefig(f"Model Diagnostics/model_{j}.png")
+    plt.clf()
+        
+# best_model.save("Models/Best_HT_LSTM_20530.keras")

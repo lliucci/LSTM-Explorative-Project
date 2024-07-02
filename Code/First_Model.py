@@ -27,17 +27,11 @@ print(device_lib.list_local_devices())
 os.getcwd()
 
 # Reading in data
-df = pd.read_csv("Data/Shark_Slough.csv",index_col= "date", parse_dates = True)
-
-# Selecting X.stn and Depth
-TS = df.loc[:, ["X.stn","Depth"]]
-TS.head()
-
-# Selecting only station A13
-P33 = TS[TS['X.stn'] == "P33"].loc[:,"Depth"] # P33 has very low missingness, good for training rnn
-P33.head
-
+P33 = pd.read_csv("Data/P33.csv", index_col = 'date', parse_dates = True)
+# Date filtering
 P33 = P33[P33.index >= "1995-01-01"]
+# Length of time series
+len(P33)
 
 print(P33.isnull().sum()) # 402 missing values present
 

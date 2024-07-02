@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3.31) (preloaded format=pdflatex 2024.4.23)  27 JUN 2024 12:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3.31) (preloaded format=pdflatex 2024.4.23)  2 JUL 2024 10:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -463,7 +463,7 @@ File: Figures/Activations.png Graphic file (type png)
 Package pdftex.def Info: Figures/Activations.png  used on input line 16.
 (pdftex.def)             Requested size: 346.89731pt x 231.27753pt.
 ) [4 <./Figures/Activations.png>] (body/rnn.tex
-<Figures/Recurrent_NN.png, id=83, 447.17062pt x 307.1475pt>
+<Figures/Recurrent_NN.png, id=84, 447.17062pt x 307.1475pt>
 File: Figures/Recurrent_NN.png Graphic file (type png)
 <use Figures/Recurrent_NN.png>
 Package pdftex.def Info: Figures/Recurrent_NN.png  used on input line 5.
@@ -484,13 +484,70 @@ Package pdftex.def Info: Figures/LSTM_Memory_Cell.png  used on input line 12.
 File: Figures/P33_Time_Series_Missingness.png Graphic file (type png)
 <use Figures/P33_Time_Series_Missingness.png>
 Package pdftex.def Info: Figures/P33_Time_Series_Missingness.png  used on input line 5.
-(pdftex.def)             Requested size: 325.215pt x 162.60416pt.
+(pdftex.def)             Requested size: 390.25534pt x 195.12793pt.
 <Figures/Interpolation_60_20.png, id=126, 481.8pt x 240.9pt>
 File: Figures/Interpolation_60_20.png Graphic file (type png)
 <use Figures/Interpolation_60_20.png>
 Package pdftex.def Info: Figures/Interpolation_60_20.png  used on input line 14.
-(pdftex.def)             Requested size: 325.215pt x 162.6115pt.
-) (body/methods.tex) (body/results.tex) (body/reflection.tex) [9 <./Figures/P33_Time_Series_Missingness.png>] [10 <./Figures/Interpolation_60_20.png>] (main.bbl [11]) [12] (main.aux)
+(pdftex.def)             Requested size: 390.25534pt x 195.13159pt.
+) (body/methods.tex [9 <./Figures/P33_Time_Series_Missingness.png>] [10 <./Figures/Interpolation_60_20.png>]
+<../../Model Diagnostics/model_0.png, id=147, 462.528pt x 346.896pt>
+File: ../../Model Diagnostics/model_0.png Graphic file (type png)
+<use ../../Model Diagnostics/model_0.png>
+Package pdftex.def Info: ../../Model Diagnostics/model_0.png  used on input line 8.
+(pdftex.def)             Requested size: 86.72267pt x 65.03754pt.
+<../../Model Diagnostics/model_1.png, id=148, 462.528pt x 346.896pt>
+File: ../../Model Diagnostics/model_1.png Graphic file (type png)
+<use ../../Model Diagnostics/model_1.png>
+Package pdftex.def Info: ../../Model Diagnostics/model_1.png  used on input line 9.
+(pdftex.def)             Requested size: 86.72267pt x 65.03754pt.
+<../../Model Diagnostics/model_2.png, id=149, 462.528pt x 346.896pt>
+File: ../../Model Diagnostics/model_2.png Graphic file (type png)
+<use ../../Model Diagnostics/model_2.png>
+Package pdftex.def Info: ../../Model Diagnostics/model_2.png  used on input line 10.
+(pdftex.def)             Requested size: 86.72267pt x 65.03754pt.
+<../../Model Diagnostics/model_3.png, id=150, 462.528pt x 346.896pt>
+File: ../../Model Diagnostics/model_3.png Graphic file (type png)
+<use ../../Model Diagnostics/model_3.png>
+Package pdftex.def Info: ../../Model Diagnostics/model_3.png  used on input line 11.
+(pdftex.def)             Requested size: 86.72267pt x 65.03754pt.
+<../../Model Diagnostics/model_4.png, id=151, 462.528pt x 346.896pt>
+File: ../../Model Diagnostics/model_4.png Graphic file (type png)
+<use ../../Model Diagnostics/model_4.png>
+Package pdftex.def Info: ../../Model Diagnostics/model_4.png  used on input line 12.
+(pdftex.def)             Requested size: 86.72267pt x 65.03754pt.
+<../../Model Diagnostics/model_5.png, id=152, 462.528pt x 346.896pt>
+File: ../../Model Diagnostics/model_5.png Graphic file (type png)
+<use ../../Model Diagnostics/model_5.png>
+Package pdftex.def Info: ../../Model Diagnostics/model_5.png  used on input line 13.
+(pdftex.def)             Requested size: 86.72267pt x 65.03754pt.
+<../../Model Diagnostics/model_6.png, id=153, 462.528pt x 346.896pt>
+File: ../../Model Diagnostics/model_6.png Graphic file (type png)
+<use ../../Model Diagnostics/model_6.png>
+Package pdftex.def Info: ../../Model Diagnostics/model_6.png  used on input line 14.
+(pdftex.def)             Requested size: 86.72267pt x 65.03754pt.
+<../../Model Diagnostics/model_7.png, id=154, 462.528pt x 346.896pt>
+File: ../../Model Diagnostics/model_7.png Graphic file (type png)
+<use ../../Model Diagnostics/model_7.png>
+Package pdftex.def Info: ../../Model Diagnostics/model_7.png  used on input line 15.
+(pdftex.def)             Requested size: 86.72267pt x 65.03754pt.
+<../../Model Diagnostics/model_8.png, id=155, 462.528pt x 346.896pt>
+File: ../../Model Diagnostics/model_8.png Graphic file (type png)
+<use ../../Model Diagnostics/model_8.png>
+Package pdftex.def Info: ../../Model Diagnostics/model_8.png  used on input line 16.
+(pdftex.def)             Requested size: 86.72267pt x 65.03754pt.
+<../../Model Diagnostics/model_9.png, id=156, 462.528pt x 346.896pt>
+File: ../../Model Diagnostics/model_9.png Graphic file (type png)
+<use ../../Model Diagnostics/model_9.png>
+Package pdftex.def Info: ../../Model Diagnostics/model_9.png  used on input line 17.
+(pdftex.def)             Requested size: 86.72267pt x 65.03754pt.
+) (body/results.tex [11 <../../Model Diagnostics/model_0.png> <../../Model Diagnostics/model_1.png> <../../Model Diagnostics/model_2.png> <../../Model Diagnostics/model_3.png> <../../Model Diagnostics/model_4.png> <../../Model Diagnostics/model_5.png> <../../Model Diagnostics/model_6.png> <../../Model Diagnostics/model_7.png> <../../Model Diagnostics/model_8.png> <../../Model Diagnostics/model_9.png>]
+<Figures/LSTM_ARIMA_HW.png, id=185, 722.7pt x 361.35pt>
+File: Figures/LSTM_ARIMA_HW.png Graphic file (type png)
+<use Figures/LSTM_ARIMA_HW.png>
+Package pdftex.def Info: Figures/LSTM_ARIMA_HW.png  used on input line 5.
+(pdftex.def)             Requested size: 433.62pt x 216.81168pt.
+) (body/reflection.tex [12 <./Figures/LSTM_ARIMA_HW.png>]) [13] (main.bbl) [14] (main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-03-14>
@@ -499,17 +556,17 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 4822EB9BACCCAD2E121838E0FA722446;880.
  ) 
 Here is how much of TeX's memory you used:
- 15714 strings out of 474424
- 309556 string characters out of 5741739
- 1933496 words of memory out of 5000000
- 37800 multiletter control sequences out of 15000+600000
- 569568 words of font info for 78 fonts, out of 8000000 for 9000
+ 15777 strings out of 474424
+ 312292 string characters out of 5741739
+ 1937496 words of memory out of 5000000
+ 37860 multiletter control sequences out of 15000+600000
+ 569737 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 90i,7n,94p,993b,1035s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/eliot/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/eliot/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/eliot/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/eliot/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/eliot/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/eliot/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/eliot/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/eliot/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/eliot/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/eliot/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/eliot/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on main.pdf (14 pages, 1202636 bytes).
+ 90i,10n,94p,1094b,959s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/eliot/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/eliot/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/eliot/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/eliot/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/eliot/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/eliot/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/eliot/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/eliot/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/eliot/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/eliot/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/eliot/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/eliot/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on main.pdf (16 pages, 1406882 bytes).
 PDF statistics:
- 221 PDF objects out of 1000 (max. 8388607)
- 47 named destinations out of 1000 (max. 500000)
- 92 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 267 PDF objects out of 1000 (max. 8388607)
+ 49 named destinations out of 1000 (max. 500000)
+ 147 words of extra memory for PDF output out of 10000 (max. 10000000)
 

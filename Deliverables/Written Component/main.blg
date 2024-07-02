@@ -6,45 +6,45 @@ The style file: apalike.bst
 Reallocating 'name_of_file' (item size: 1) to 19 items.
 Database file #1: writingproject.bib
 Warning--empty journal in understandinglstm
-You've used 18 entries,
+You've used 6 entries,
             1935 wiz_defined-function locations,
-            590 strings with 6504 characters,
-and the built_in function-call counts, 6568 in all, are:
-= -- 630
-> -- 263
-< -- 14
-+ -- 92
-- -- 84
-* -- 551
-:= -- 1173
-add.period$ -- 53
-call.type$ -- 18
-change.case$ -- 125
-chr.to.int$ -- 18
-cite$ -- 19
-duplicate$ -- 249
-empty$ -- 465
-format.name$ -- 116
-if$ -- 1261
+            507 strings with 4487 characters,
+and the built_in function-call counts, 1993 in all, are:
+= -- 201
+> -- 65
+< -- 5
++ -- 22
+- -- 20
+* -- 158
+:= -- 363
+add.period$ -- 16
+call.type$ -- 6
+change.case$ -- 39
+chr.to.int$ -- 6
+cite$ -- 7
+duplicate$ -- 75
+empty$ -- 140
+format.name$ -- 29
+if$ -- 377
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 21
-newline$ -- 91
-num.names$ -- 56
-pop$ -- 112
+missing$ -- 4
+newline$ -- 31
+num.names$ -- 18
+pop$ -- 27
 preamble$ -- 1
-purify$ -- 129
+purify$ -- 39
 quote$ -- 0
-skip$ -- 189
+skip$ -- 63
 stack$ -- 0
-substring$ -- 437
-swap$ -- 18
-text.length$ -- 2
+substring$ -- 149
+swap$ -- 3
+text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 100
+type$ -- 36
 warning$ -- 1
-while$ -- 52
+while$ -- 18
 width$ -- 0
-write$ -- 227
+write$ -- 73
 (There was 1 warning)

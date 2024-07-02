@@ -298,11 +298,88 @@ INPUT .\body\methods.tex
 INPUT .\body\methods.tex
 INPUT .\body\methods.tex
 INPUT body\methods.tex
+INPUT ..\..\Model Diagnostics\model_0.png
+INPUT ..\..\Model Diagnostics\model_0.png
+INPUT ..\..\Model Diagnostics\model_0.png
+INPUT ..\..\Model Diagnostics\model_0.png
+INPUT ..\..\Model Diagnostics\model_0.png
+INPUT ..\..\Model Diagnostics\model_0.png
+INPUT ..\..\Model Diagnostics\model_0.png
+INPUT ..\..\Model Diagnostics\model_1.png
+INPUT ..\..\Model Diagnostics\model_1.png
+INPUT ..\..\Model Diagnostics\model_1.png
+INPUT ..\..\Model Diagnostics\model_1.png
+INPUT ..\..\Model Diagnostics\model_1.png
+INPUT ..\..\Model Diagnostics\model_1.png
+INPUT ..\..\Model Diagnostics\model_1.png
+INPUT ..\..\Model Diagnostics\model_2.png
+INPUT ..\..\Model Diagnostics\model_2.png
+INPUT ..\..\Model Diagnostics\model_2.png
+INPUT ..\..\Model Diagnostics\model_2.png
+INPUT ..\..\Model Diagnostics\model_2.png
+INPUT ..\..\Model Diagnostics\model_2.png
+INPUT ..\..\Model Diagnostics\model_2.png
+INPUT ..\..\Model Diagnostics\model_3.png
+INPUT ..\..\Model Diagnostics\model_3.png
+INPUT ..\..\Model Diagnostics\model_3.png
+INPUT ..\..\Model Diagnostics\model_3.png
+INPUT ..\..\Model Diagnostics\model_3.png
+INPUT ..\..\Model Diagnostics\model_3.png
+INPUT ..\..\Model Diagnostics\model_3.png
+INPUT ..\..\Model Diagnostics\model_4.png
+INPUT ..\..\Model Diagnostics\model_4.png
+INPUT ..\..\Model Diagnostics\model_4.png
+INPUT ..\..\Model Diagnostics\model_4.png
+INPUT ..\..\Model Diagnostics\model_4.png
+INPUT ..\..\Model Diagnostics\model_4.png
+INPUT ..\..\Model Diagnostics\model_4.png
+INPUT ..\..\Model Diagnostics\model_5.png
+INPUT ..\..\Model Diagnostics\model_5.png
+INPUT ..\..\Model Diagnostics\model_5.png
+INPUT ..\..\Model Diagnostics\model_5.png
+INPUT ..\..\Model Diagnostics\model_5.png
+INPUT ..\..\Model Diagnostics\model_5.png
+INPUT ..\..\Model Diagnostics\model_5.png
+INPUT ..\..\Model Diagnostics\model_6.png
+INPUT ..\..\Model Diagnostics\model_6.png
+INPUT ..\..\Model Diagnostics\model_6.png
+INPUT ..\..\Model Diagnostics\model_6.png
+INPUT ..\..\Model Diagnostics\model_6.png
+INPUT ..\..\Model Diagnostics\model_6.png
+INPUT ..\..\Model Diagnostics\model_6.png
+INPUT ..\..\Model Diagnostics\model_7.png
+INPUT ..\..\Model Diagnostics\model_7.png
+INPUT ..\..\Model Diagnostics\model_7.png
+INPUT ..\..\Model Diagnostics\model_7.png
+INPUT ..\..\Model Diagnostics\model_7.png
+INPUT ..\..\Model Diagnostics\model_7.png
+INPUT ..\..\Model Diagnostics\model_7.png
+INPUT ..\..\Model Diagnostics\model_8.png
+INPUT ..\..\Model Diagnostics\model_8.png
+INPUT ..\..\Model Diagnostics\model_8.png
+INPUT ..\..\Model Diagnostics\model_8.png
+INPUT ..\..\Model Diagnostics\model_8.png
+INPUT ..\..\Model Diagnostics\model_8.png
+INPUT ..\..\Model Diagnostics\model_8.png
+INPUT ..\..\Model Diagnostics\model_9.png
+INPUT ..\..\Model Diagnostics\model_9.png
+INPUT ..\..\Model Diagnostics\model_9.png
+INPUT ..\..\Model Diagnostics\model_9.png
+INPUT ..\..\Model Diagnostics\model_9.png
+INPUT ..\..\Model Diagnostics\model_9.png
+INPUT ..\..\Model Diagnostics\model_9.png
 INPUT .\body\results.tex
 INPUT .\body\results.tex
 INPUT .\body\results.tex
 INPUT .\body\results.tex
 INPUT body\results.tex
+INPUT .\Figures\LSTM_ARIMA_HW.png
+INPUT .\Figures\LSTM_ARIMA_HW.png
+INPUT .\Figures\LSTM_ARIMA_HW.png
+INPUT .\Figures\LSTM_ARIMA_HW.png
+INPUT .\Figures\LSTM_ARIMA_HW.png
+INPUT .\Figures\LSTM_ARIMA_HW.png
+INPUT .\Figures\LSTM_ARIMA_HW.png
 INPUT .\body\reflection.tex
 INPUT .\body\reflection.tex
 INPUT .\body\reflection.tex
@@ -311,6 +388,7 @@ INPUT body\reflection.tex
 INPUT .\main.bbl
 INPUT .\main.bbl
 INPUT main.bbl
+INPUT C:\Users\eliot\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmtt12.tfm
 INPUT main.aux
 INPUT .\main.out
 INPUT .\main.out
@@ -336,3 +414,5 @@ INPUT C:\Users\eliot\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\c
 INPUT C:\Users\eliot\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy8.pfb
 INPUT C:\Users\eliot\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti12.pfb
 INPUT C:\Users\eliot\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmti12.pfb
+INPUT C:\Users\eliot\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmtt12.pfb
+INPUT C:\Users\eliot\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmtt12.pfb
