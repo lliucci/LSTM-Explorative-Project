@@ -5,3 +5,10 @@ channels:
 dependencies:
   - python==3.9
   - tensorflow==2.10
+  - numpy
+  - pandas
+  - matplotlib
+  - keras
+  - scikit-learn
+  - tensorflow
+  - tsbootstrap

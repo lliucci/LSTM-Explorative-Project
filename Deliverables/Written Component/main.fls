@@ -298,6 +298,7 @@ INPUT .\body\methods.tex
 INPUT .\body\methods.tex
 INPUT .\body\methods.tex
 INPUT body\methods.tex
+INPUT C:\Users\eliot\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm1200.tfm
 INPUT ..\..\Model Diagnostics\model_0.png
 INPUT ..\..\Model Diagnostics\model_0.png
 INPUT ..\..\Model Diagnostics\model_0.png
@@ -368,6 +369,41 @@ INPUT ..\..\Model Diagnostics\model_9.png
 INPUT ..\..\Model Diagnostics\model_9.png
 INPUT ..\..\Model Diagnostics\model_9.png
 INPUT ..\..\Model Diagnostics\model_9.png
+INPUT .\Figures\Variability_2000_Epochs.png
+INPUT .\Figures\Variability_2000_Epochs.png
+INPUT .\Figures\Variability_2000_Epochs.png
+INPUT .\Figures\Variability_2000_Epochs.png
+INPUT .\Figures\Variability_2000_Epochs.png
+INPUT .\Figures\Variability_2000_Epochs.png
+INPUT .\Figures\Variability_2000_Epochs.png
+INPUT .\Figures\Variability_4000_Epochs.png
+INPUT .\Figures\Variability_4000_Epochs.png
+INPUT .\Figures\Variability_4000_Epochs.png
+INPUT .\Figures\Variability_4000_Epochs.png
+INPUT .\Figures\Variability_4000_Epochs.png
+INPUT .\Figures\Variability_4000_Epochs.png
+INPUT .\Figures\Variability_4000_Epochs.png
+INPUT .\Figures\Variability_6000_Epochs.png
+INPUT .\Figures\Variability_6000_Epochs.png
+INPUT .\Figures\Variability_6000_Epochs.png
+INPUT .\Figures\Variability_6000_Epochs.png
+INPUT .\Figures\Variability_6000_Epochs.png
+INPUT .\Figures\Variability_6000_Epochs.png
+INPUT .\Figures\Variability_6000_Epochs.png
+INPUT .\Figures\Variability_8000_Epochs.png
+INPUT .\Figures\Variability_8000_Epochs.png
+INPUT .\Figures\Variability_8000_Epochs.png
+INPUT .\Figures\Variability_8000_Epochs.png
+INPUT .\Figures\Variability_8000_Epochs.png
+INPUT .\Figures\Variability_8000_Epochs.png
+INPUT .\Figures\Variability_8000_Epochs.png
+INPUT .\Figures\Variability_10000_Epochs.png
+INPUT .\Figures\Variability_10000_Epochs.png
+INPUT .\Figures\Variability_10000_Epochs.png
+INPUT .\Figures\Variability_10000_Epochs.png
+INPUT .\Figures\Variability_10000_Epochs.png
+INPUT .\Figures\Variability_10000_Epochs.png
+INPUT .\Figures\Variability_10000_Epochs.png
 INPUT .\body\results.tex
 INPUT .\body\results.tex
 INPUT .\body\results.tex
@@ -392,6 +428,8 @@ INPUT C:\Users\eliot\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmtt12.tf
 INPUT main.aux
 INPUT .\main.out
 INPUT .\main.out
+INPUT C:\Users\eliot\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk
+INPUT C:\Users\eliot\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk
 INPUT C:\Users\eliot\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb
 INPUT C:\Users\eliot\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb
 INPUT C:\Users\eliot\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb

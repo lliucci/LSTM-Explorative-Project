@@ -6,47 +6,54 @@
 \newlabel{sec:intro}{{1}{3}{Introduction}{section.1}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces A flowchart depicting a single-layer Neural Network. The input layer (blue) contains a single node, indicating a single value would be taken as an input. The hidden state (green) contains a single layer of \textit  {n} nodes. The output layer (red) contains a single node, indicating a single value would be received as an output. Graphic made with LucidChart.}}{3}{figure.1}\protected@file@percent }
 \newlabel{fig:NueralNetwork}{{1}{3}{A flowchart depicting a single-layer Neural Network. The input layer (blue) contains a single node, indicating a single value would be taken as an input. The hidden state (green) contains a single layer of \textit {n} nodes. The output layer (red) contains a single node, indicating a single value would be received as an output. Graphic made with LucidChart}{figure.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces A comparison of common activation functions. The purpose of this visualization is to show how the range of the inputs compares to the range of the outputs for different activations.}}{4}{figure.2}\protected@file@percent }
-\newlabel{fig:Activations}{{2}{4}{A comparison of common activation functions. The purpose of this visualization is to show how the range of the inputs compares to the range of the outputs for different activations}{figure.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces A comparison of common activation functions. Note how the range of the inputs compares to the range of the outputs for different activations.}}{4}{figure.2}\protected@file@percent }
+\newlabel{fig:Activations}{{2}{4}{A comparison of common activation functions. Note how the range of the inputs compares to the range of the outputs for different activations}{figure.2}{}}
 \citation{rumelhart1986learning}
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.1}Recurrent Neural Networks}{5}{subsection.1.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces A visualization of an "unrolled" recurrent neural network. This specific example uses 3 time-points of information to get a prediction.}}{5}{figure.3}\protected@file@percent }
-\newlabel{fig:RNN}{{3}{5}{A visualization of an "unrolled" recurrent neural network. This specific example uses 3 time-points of information to get a prediction}{figure.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces A visualization of an `unrolled' recurrent neural network. This specific example uses 3 time-points of information to get a prediction.}}{6}{figure.3}\protected@file@percent }
+\newlabel{fig:RNN}{{3}{6}{A visualization of an `unrolled' recurrent neural network. This specific example uses 3 time-points of information to get a prediction}{figure.3}{}}
 \citation{hochreiter1997long}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.2}Long Short-Term Memory Networks}{6}{subsection.1.2}\protected@file@percent }
-\citation{understandinglstm}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2}Long Short-Term Memory Networks}{7}{subsection.1.2}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces A visualization of long short-term memory networks.}}{7}{figure.4}\protected@file@percent }
 \newlabel{fig:LSTM}{{4}{7}{A visualization of long short-term memory networks}{figure.4}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces A visualization of the memory cells in LSTMs.}}{7}{figure.5}\protected@file@percent }
-\newlabel{fig:MemoryCells}{{5}{7}{A visualization of the memory cells in LSTMs}{figure.5}{}}
+\citation{understandinglstm}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces A visualization of the memory cells in LSTMs.}}{8}{figure.5}\protected@file@percent }
+\newlabel{fig:MemoryCells}{{5}{8}{A visualization of the memory cells in LSTMs}{figure.5}{}}
 \citation{kalmanfilter}
-\citation{chollet2015keras}
-\citation{lstmkeras}
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.3}EVER Data}{9}{subsection.1.3}\protected@file@percent }
 \newlabel{sec:EVER}{{1.3}{9}{EVER Data}{subsection.1.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces A line plot of the time series used to train the LSTM in this project. Red vertical bars indicate a date with a missing value.}}{9}{figure.6}\protected@file@percent }
-\newlabel{fig:P33}{{6}{9}{A line plot of the time series used to train the LSTM in this project. Red vertical bars indicate a date with a missing value}{figure.6}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces A line plot of the time series used to train the LSTM in this project. Red lines indicate the imputed values using the Kalman filter. Note that this plot focuses on 1980 to 2000, despite imputation being performed across the entire time series.}}{10}{figure.7}\protected@file@percent }
-\newlabel{fig:P33_Interpolated}{{7}{10}{A line plot of the time series used to train the LSTM in this project. Red lines indicate the imputed values using the Kalman filter. Note that this plot focuses on 1980 to 2000, despite imputation being performed across the entire time series}{figure.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces A line plot of the time series used to train the LSTM in this project. Red vertical bars indicate a date with a missing value.}}{10}{figure.6}\protected@file@percent }
+\newlabel{fig:P33}{{6}{10}{A line plot of the time series used to train the LSTM in this project. Red vertical bars indicate a date with a missing value}{figure.6}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {2}Methods}{10}{section.2}\protected@file@percent }
 \newlabel{sec:methods}{{2}{10}{Methods}{section.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces A series of plots obtained from the training process. Each plot shows the predicted water depths 31 days past the training set. The red line indicates the predictions from the LSTM and the blue line indicates the observed water depth. The number below each plot indicates how many generations the LSTM was trained for when the predictions were made.}}{11}{figure.8}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {2,530}}}{11}{subfigure.8.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {4,530}}}{11}{subfigure.8.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {6,530}}}{11}{subfigure.8.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {8,530}}}{11}{subfigure.8.4}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {10,530}}}{11}{subfigure.8.5}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {12,530}}}{11}{subfigure.8.6}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(g)}{\ignorespaces {14,530}}}{11}{subfigure.8.7}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(h)}{\ignorespaces {16,530}}}{11}{subfigure.8.8}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(i)}{\ignorespaces {18,530}}}{11}{subfigure.8.9}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(j)}{\ignorespaces {20,5530}}}{11}{subfigure.8.10}\protected@file@percent }
-\newlabel{fig:Training}{{8}{11}{A series of plots obtained from the training process. Each plot shows the predicted water depths 31 days past the training set. The red line indicates the predictions from the LSTM and the blue line indicates the observed water depth. The number below each plot indicates how many generations the LSTM was trained for when the predictions were made}{figure.8}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3}Results}{12}{section.3}\protected@file@percent }
-\newlabel{sec:results}{{3}{12}{Results}{section.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces A comparison of 31 day forecasts between the 3 models. Each model was trained on the same data.}}{12}{figure.9}\protected@file@percent }
-\newlabel{fig:Comparison}{{9}{12}{A comparison of 31 day forecasts between the 3 models. Each model was trained on the same data}{figure.9}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Reflection}{12}{subsection.3.1}\protected@file@percent }
+\citation{chollet2015keras}
+\citation{lstmkeras}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces A line plot of the time series used to train the LSTM in this project. Red lines indicate the imputed values using the Kalman filter. Note that this plot focuses on 1980 to 2000, despite imputation being performed across the entire time series.}}{11}{figure.7}\protected@file@percent }
+\newlabel{fig:P33_Interpolated}{{7}{11}{A line plot of the time series used to train the LSTM in this project. Red lines indicate the imputed values using the Kalman filter. Note that this plot focuses on 1980 to 2000, despite imputation being performed across the entire time series}{figure.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces A series of plots obtained from the training process. Each plot shows the predicted water depths 31 days past the training set. The red line indicates the predictions from the LSTM and the blue line indicates the observed water depth. The number below each plot indicates how many generations the LSTM was trained for when the predictions were made.}}{13}{figure.8}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {2,530}}}{13}{subfigure.8.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {4,530}}}{13}{subfigure.8.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {6,530}}}{13}{subfigure.8.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {8,530}}}{13}{subfigure.8.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {10,530}}}{13}{subfigure.8.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {12,530}}}{13}{subfigure.8.6}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(g)}{\ignorespaces {14,530}}}{13}{subfigure.8.7}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(h)}{\ignorespaces {16,530}}}{13}{subfigure.8.8}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(i)}{\ignorespaces {18,530}}}{13}{subfigure.8.9}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(j)}{\ignorespaces {20,5530}}}{13}{subfigure.8.10}\protected@file@percent }
+\newlabel{fig:Training}{{8}{13}{A series of plots obtained from the training process. Each plot shows the predicted water depths 31 days past the training set. The red line indicates the predictions from the LSTM and the blue line indicates the observed water depth. The number below each plot indicates how many generations the LSTM was trained for when the predictions were made}{figure.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces A line plot comparing the 1 month out-of-sample predictions for 5 models initialized with the same framework. Each model was trained on the same training data for the number of iterations displayed below the plot.}}{14}{figure.9}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {2,000}}}{14}{subfigure.9.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {4,000}}}{14}{subfigure.9.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {6,000}}}{14}{subfigure.9.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {8,000}}}{14}{subfigure.9.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {10,000}}}{14}{subfigure.9.5}\protected@file@percent }
+\newlabel{fig:Variability}{{9}{14}{A line plot comparing the 1 month out-of-sample predictions for 5 models initialized with the same framework. Each model was trained on the same training data for the number of iterations displayed below the plot}{figure.9}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Results}{15}{section.3}\protected@file@percent }
+\newlabel{sec:results}{{3}{15}{Results}{section.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces A comparison of 31 day forecasts between the 3 models. Each model was trained on the same data.}}{15}{figure.10}\protected@file@percent }
+\newlabel{fig:Comparison}{{10}{15}{A comparison of 31 day forecasts between the 3 models. Each model was trained on the same data}{figure.10}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Reflection}{16}{subsection.3.1}\protected@file@percent }
 \bibstyle{apalike}
 \bibdata{writingproject.bib}
 \bibcite{chollet2015keras}{{1}{2015}{{Chollet et~al.}}{{}}}
@@ -55,4 +62,4 @@
 \bibcite{hochreiter1997long}{{4}{1997}{{Hochreiter and Schmidhuber}}{{}}}
 \bibcite{kalmanfilter}{{5}{1960}{{Kalman}}{{}}}
 \bibcite{rumelhart1986learning}{{6}{1986}{{Rumelhart et~al.}}{{}}}
-\gdef \@abspage@last{16}
+\gdef \@abspage@last{20}

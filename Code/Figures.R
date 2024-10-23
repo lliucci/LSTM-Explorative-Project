@@ -108,7 +108,9 @@ activations = tibble(x, Linear, ReLU, Tanh, Sigmoid) %>%
   ggplot(aes(x = x, y = Value)) +
   geom_line() +
   labs(x = "Input", y = "Output") +
-  facet_wrap(~Activation, nrow = 1)
+  facet_wrap(~Activation, nrow = 2) +
+  ylim(-1, 1) +
+  xlim(-2, 2)
 
 ggsave(activations,
       filename = "Deliverables/Written Component/Figures/Activations.png",

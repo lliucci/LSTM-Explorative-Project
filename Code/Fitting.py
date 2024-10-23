@@ -11,6 +11,7 @@ from keras.layers import Dropout
 import tensorflow as tf
 from keras.optimizers import Adam
 import time
+from keras import callbacks
 from sklearn import metrics
 from keras import regularizers
 
@@ -18,7 +19,7 @@ from keras import regularizers
 # Confirming GPU is being used
 import tensorflow as tf
 tf.test.is_gpu_available()
-tf.config.list_physical_devices('GPU')
+print(tf.config.list_physical_devices('GPU'))
 
 from tensorflow.python.client import device_lib
 print(device_lib.list_local_devices())
@@ -35,8 +36,8 @@ len(P33)
 
 # Splitting dataset for cross-validation
 train_size = int(len(P33) * 0.9) # Use 90% of data for training
-train = P33.iloc[0:train_size,1]
-test = P33.iloc[train_size:len(P33),1] 
+train = P33.iloc[0:train_size]
+test = P33.iloc[train_size:len(P33)] 
 
 # Reshaping data sets from Panda Series to 1D Array
 train = train.values.flatten()
@@ -57,16 +58,24 @@ generator = TimeseriesGenerator(scaled_train, scaled_train,
                                 length = n_input,
                                 batch_size = 100) # Update network after 3 months of information, speeds up training
 
-# Model Definition  
+callback = callbacks.EarlyStopping(monitor="val_loss", min_delta=0.0005, patience=5, baseline = 20)
+
 model = Sequential() # layers are added sequentially
-model.add(LSTM(16, 
+model.add(LSTM(17, 
                 activation = 'tanh', 
                 input_shape = (n_input, n_features),
                 return_sequences=True,
                 kernel_regularizer=regularizers.L2(0.001),
                 activity_regularizer=regularizers.L2(0.001)))
-model.add(Dropout(0.05))
-model.add(LSTM(16, 
+model.add(Dropout(0.15))
+model.add(LSTM(11, 
+                activation = 'tanh', 
+                input_shape = (n_input, n_features),
+                return_sequences=True,
+                kernel_regularizer=regularizers.L2(0.001),
+                activity_regularizer=regularizers.L2(0.001)))
+model.add(Dropout(0.15))
+model.add(LSTM(37, 
                 activation = 'tanh', 
                 input_shape = (n_input, n_features),
                 return_sequences=False,
@@ -75,17 +84,13 @@ model.add(LSTM(16,
 model.add(Dropout(0.05))
 model.add(Dense(1))
 model.compile(optimizer = Adam(learning_rate=0.0001,
-                               clipnorm = 1), 
-              loss = 'mse')
-model.summary()
-
+                            clipnorm = 1), 
+            loss = 'mse')
 gen_output = TimeseriesGenerator(scaled_test, scaled_test, 
                                 length = n_input,
-                                batch_size = 100)
-
-# Fitting model  
-#with tf.device('/device:GPU:0'): 
-model.fit(generator, epochs = 50, validation_data = gen_output)
+                                batch_size = 1000)
+with tf.device('/device:GPU:0'): 
+    model.fit(generator, epochs = 1000, validation_data = gen_output, callbacks = callback)
 
 # Loop for training
 

@@ -13,6 +13,7 @@ from keras.optimizers import Adam
 import time
 from sklearn import metrics
 from keras import regularizers
+from statsmodels.tsa.seasonal import seasonal_decompose
 
 
 # Reading in data
@@ -31,8 +32,12 @@ scaled_train = stage_transformer.transform(train)
 n_input = 31
 n_features = 1
 
-# Fit ARIMA
+# Decomposition
+result = seasonal_decompose(P33, model='additive')
+result.plot()
+plt.show()
 
+# Fit ARIMA
 model_arima = auto_arima(train)
 model_arima.fit(train)
 model_arima.summary()
@@ -40,12 +45,10 @@ arima_preds = model_arima.predict(n_periods = 31)
 forecast = pd.DataFrame(arima_preds, index = P33.index[train_size:train_size + 31], columns=['Prediction'])
 
 # Fit HW
-
 HW = ExponentialSmoothing(train, trend = 'add', seasonal = 'add', seasonal_periods = 365).fit()
 HW_preds = HW.forecast(31)
 
 # Load LSTM
-
 model = tf.keras.models.load_model('Models/Best_HT_LSTM_20530.keras')
 duration = 31
 test_predictions = []
