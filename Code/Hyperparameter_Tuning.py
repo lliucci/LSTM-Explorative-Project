@@ -61,10 +61,10 @@ def build_model(hp):
 
 # Reading in data
 P33 = pd.read_csv("Data/P33.csv",index_col= "date", parse_dates = True)
-P33 = P33[P33.index >= "1995-01-01"]
+P33 = P33[P33.index >= "1960-01-01"]
 
 # Splitting dataset for cross-validation
-train_test_split = 0.9
+train_test_split = 0.99
 train_size = int(len(P33) * train_test_split) # Use 90% of data for training
 train = P33.iloc[0:train_size]
 test = P33.iloc[train_size:len(P33)] 
@@ -86,7 +86,7 @@ n_input = 100
 n_features = 1
 
 # Define train and test
-generator = TimeseriesGenerator(scaled_train, scaled_train, 
+training = TimeseriesGenerator(scaled_train, scaled_train, 
                                 length = n_input,
                                 batch_size = 5000)
 
@@ -107,7 +107,7 @@ tuner = BayesianOptimization(
 
 # Searching
 tuner.search(
-    x = generator,
+    x = training,
     epochs = 100,
     validation_data = validation
     )
@@ -135,7 +135,7 @@ for j in range(12):
     
    # Fitting model  
    with tf.device('/device:GPU:0'): 
-        best_model_EVER.fit(generator, epochs = 1000, validation_data = validation)
+        best_model_EVER.fit(training, epochs = 1000, validation_data = validation)
 
    duration = len(test)
    test_predictions = []
@@ -189,7 +189,7 @@ n_input = 100
 n_features = 1
 
 # Define train and test
-generator = TimeseriesGenerator(scaled_train, scaled_train, 
+training = TimeseriesGenerator(scaled_train, scaled_train, 
                                 length = n_input,
                                 batch_size = 5000)
 
@@ -210,7 +210,7 @@ tuner= BayesianOptimization(
 
 # Searching
 tuner.search(
-    x = generator,
+    x = training,
     epochs = 100,
     validation_data = validation
     )
@@ -238,7 +238,7 @@ for j in range(12):
     
    # Fitting model  
    with tf.device('/device:GPU:0'): 
-        best_model_SSM.fit(generator, epochs = 1000, validation_data = validation)
+        best_model_SSM.fit(training, epochs = 1000, validation_data = validation)
 
    duration = len(test)
    test_predictions = []
@@ -292,7 +292,7 @@ n_input = 100
 n_features = 1
 
 # Define train and test
-generator = TimeseriesGenerator(scaled_train, scaled_train, 
+training = TimeseriesGenerator(scaled_train, scaled_train, 
                                 length = n_input,
                                 batch_size = 5000)
 
@@ -313,7 +313,7 @@ tuner= BayesianOptimization(
 
 # Searching
 tuner.search(
-    x = generator,
+    x = training,
     epochs = 100,
     validation_data = validation
     )
@@ -341,7 +341,7 @@ for j in range(12):
     
    # Fitting model  
    with tf.device('/device:GPU:0'): 
-        best_model_ARIMA.fit(generator, epochs = 1000, validation_data = validation)
+        best_model_ARIMA.fit(training, epochs = 1000, validation_data = validation)
 
    duration = len(test)
    test_predictions = []
