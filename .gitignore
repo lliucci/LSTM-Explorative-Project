@@ -3,3 +3,6 @@
 .RData
 .Ruserdata
 Cleaned_Data.csv
+Writing-Project.Rproj
+.venv
+.vscode
