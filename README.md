@@ -1,7 +1,7 @@
 # Committee  
 
+__Author:__ Eliot Liucci  
 __Chair:__ John Smith  
-
 __Additional Members:__ Samidha Shetty, Katharine Banner, and Scott McCalla
 
 # Directory Guide
