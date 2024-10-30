@@ -19,7 +19,7 @@ from tsbootstrap import MovingBlockBootstrap
 # Reading in data
 P33 = pd.read_csv("Data/P33.csv", index_col = 'date', parse_dates = True)
 # Date filtering
-P33 = P33[P33.index >= "1995-01-01"]
+P33 = P33[P33.index >= "1980-01-01"]
 # Length of time series
 len(P33)
 
@@ -136,7 +136,7 @@ Plotting = [
     ]
 
 # Load in intervals from cluster
-# Plotting = pd.read_csv("Data/Pred_Intervals.csv", index_col = 0)
+Plotting = pd.read_csv("Data/Pred_Intervals.csv", index_col = 0)
 
 # Plots bootstrapped predictions
 fig = plt.figure(figsize=(10,5))
