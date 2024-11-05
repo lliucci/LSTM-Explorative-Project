@@ -1,16 +1,22 @@
 library(tidyverse)
 
-# ARIMA
+# ------------------------------------------------------------------------
+# ARIMA ------------------------------------------------------------------
+# ------------------------------------------------------------------------
+
 sim = arima.sim(n = 10000,
     model = list(order = c(1, 1, 1),
                 ar = c(0.9),
                 ma = c(3)))
 plot(sim)
-simulated_data = dplyr::tibble(sim)
 
+
+simulated_data = dplyr::tibble(sim)
 readr::write_csv(simulated_data, "Data/Simulated_ARIMA_TS.csv")
 
-# State Space Model
+# ------------------------------------------------------------------------
+# State Space Model ------------------------------------------------------
+# ------------------------------------------------------------------------
 
 ## Hyperparameters
 sigma_v = sqrt(5) # Dynamic noise in x
@@ -26,6 +32,7 @@ for(i in 2:n){
     x_vec[i] = x_vec[i-1]/2 + 25*x_vec[i-1]/(1+x_vec[i-1]^2) + 8*cos(1.2*i) + v_n
     y_vec[i] = x_vec[i]^2/20 + w_n
 }
+
 ## Time series
 ssm_simulated_ts = tibble(ts = y_vec)
 

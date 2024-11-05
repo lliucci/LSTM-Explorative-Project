@@ -30,11 +30,11 @@ __Additional Members:__ Samidha Shetty, Katharine Banner, and Scott McCalla
 
 # To-Dos
   - John's comments in Overleaf
-  - Discussion of SSM & ARIMA results and performance
+  - ~~Discussion of SSM & ARIMA results and performance~~
     - ~~Introduce Simulation Methods & Cite Paper~~
       - ~~Kitagawa et al for SSM~~
       - ~~Introductory Time Series with R for ARIMA~~
-    - Generate graphics
+    - ~~Generate graphics~~
     - ~~Latin Hypercube for Hyperparameter Searching~~
   - ~~Equation tables~~
     - ~~Vertical buffer~~
